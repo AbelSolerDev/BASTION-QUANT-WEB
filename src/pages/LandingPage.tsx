@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl md:text-7xl font-display font-bold leading-tight"
           >
-            Tu propio <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">hedge fund</span><br />
+            Tu propio <span className="text-accentCyan md:text-transparent md:bg-clip-text md:bg-gradient-to-r md:from-accentCyan md:via-white md:to-accentViolet md:animate-gradient-x">hedge fund</span><br />
             en un solo sistema.
           </motion.h1>
 
@@ -74,14 +74,14 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4"
           >
-            <Link to="/catalog">
-              <button className="group px-8 py-4 bg-gradient-to-r from-accentCyan to-accentViolet text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center border border-white/10">
+            <Link to="/catalog" className="w-full md:w-auto">
+              <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-accentCyan to-accentViolet text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center border border-white/10">
                 Explorar Infraestructura 
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link to="/sentinel">
-              <button className="px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-accentCyan/50 transition-all flex items-center backdrop-blur-md">
+            <Link to="/sentinel" className="w-full md:w-auto">
+              <button className="w-full md:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-accentCyan/50 transition-all flex items-center justify-center backdrop-blur-md">
                 Descubrir SENTINEL
               </button>
             </Link>
@@ -173,13 +173,16 @@ const LandingPage: React.FC = () => {
           {/* Progress Bar Visual */}
           <div className="w-full bg-bgSecondary h-4 rounded-full mb-12 overflow-hidden relative">
             <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-accentCyan to-accentViolet w-[63%]"></div>
-            <div className="absolute top-0 left-0 h-full w-full flex text-[10px] font-mono font-bold text-white/50 items-center justify-between px-4">
+            <div className="absolute top-0 left-0 h-full w-full hidden md:flex text-[10px] font-mono font-bold text-white/50 items-center justify-between px-4">
                <span>Base</span>
                <span>Safety</span>
                <span>Operacion</span>
                <span>Produccion</span>
             </div>
           </div>
+          <p className="md:hidden text-[11px] font-mono text-textSecondary text-center -mt-8 mb-8">
+            Estado actual: Safety 3.4 -&gt; Objetivo: Produccion 6.0
+          </p>
 
           {/* Filter Tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
