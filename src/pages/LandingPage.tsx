@@ -412,7 +412,12 @@ const LandingPage: React.FC = () => {
       {/* SECTION 6: COMPARISON */}
       <section className="py-24 px-4 bg-bgSecondary">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-display font-bold text-center mb-12">Por que no un bot retail de $29/mes?</h2>
+          <h2 className="text-3xl font-display font-bold text-center mb-4">
+            Por que BASTION QUANT no compite en la liga retail.
+          </h2>
+          <p className="text-center text-textSecondary mb-12 max-w-3xl mx-auto">
+            Esta comparativa no habla de precio. Habla de estandares de seguridad, control operativo y trazabilidad.
+          </p>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -445,7 +450,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="mt-8 text-center bg-accentCyan/5 p-6 rounded-xl border border-accentCyan/10">
             <p className="text-lg text-accentCyan font-display font-bold">
-              Los bots retail hacen 3 de estas cosas. BASTION QUANT las hace TODAS.
+              BASTION QUANT se posiciona como infraestructura privada, no como suscripcion masiva.
             </p>
           </div>
         </div>
@@ -465,7 +470,7 @@ const LandingPage: React.FC = () => {
               </button>
             </Link>
             <button className="px-10 py-5 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors cursor-not-allowed">
-              Acceso Privado
+              Acceso por Evaluacion
             </button>
           </div>
 
