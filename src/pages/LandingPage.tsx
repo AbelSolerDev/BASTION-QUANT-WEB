@@ -426,18 +426,73 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 mb-8">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Riesgo</p>
-              <p className="text-white font-semibold">Proteccion por capas antes de ejecutar</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Ejecucion</p>
-              <p className="text-white font-semibold">Disciplina operativa con reglas verificables</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Auditoria</p>
-              <p className="text-white font-semibold">Trazabilidad para decisiones de alto impacto</p>
-            </div>
+            {[
+              {
+                title: 'Riesgo',
+                subtitle: 'Proteccion por capas antes de ejecutar',
+                note: 'Gates de seguridad activos',
+                icon: ShieldCheck,
+                tone: 'danger',
+              },
+              {
+                title: 'Ejecucion',
+                subtitle: 'Disciplina operativa con reglas verificables',
+                note: 'Pipeline unico de escritura',
+                icon: Zap,
+                tone: 'gold',
+              },
+              {
+                title: 'Auditoria',
+                subtitle: 'Trazabilidad para decisiones de alto impacto',
+                note: 'Registro inmutable y reproducible',
+                icon: Cpu,
+                tone: 'cyan',
+              },
+            ].map((pillar) => {
+              const Icon = pillar.icon;
+              const toneMap = {
+                danger: {
+                  border: 'border-accentDanger/35',
+                  chip: 'text-accentDanger bg-accentDanger/15 border-accentDanger/30',
+                  glow: 'bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.22),transparent_55%)]',
+                },
+                gold: {
+                  border: 'border-accentGold/35',
+                  chip: 'text-accentGold bg-accentGold/15 border-accentGold/30',
+                  glow: 'bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.20),transparent_55%)]',
+                },
+                cyan: {
+                  border: 'border-accentCyan/35',
+                  chip: 'text-accentCyan bg-accentCyan/15 border-accentCyan/30',
+                  glow: 'bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.22),transparent_55%)]',
+                },
+              } as const;
+              const tone = toneMap[pillar.tone as keyof typeof toneMap];
+              return (
+                <motion.article
+                  key={pillar.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                  className={`relative rounded-2xl border ${tone.border} bg-[#0a101f]/90 p-5 overflow-hidden`}
+                >
+                  <div className={`absolute inset-0 pointer-events-none ${tone.glow}`} />
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex items-center gap-2 px-2.5 py-1 rounded-md border text-[11px] font-mono uppercase tracking-wider ${tone.chip}`}>
+                        <Icon size={12} />
+                        {pillar.title}
+                      </div>
+                      <span className="text-3xl font-display text-white/10">{pillar.title.slice(0, 1)}</span>
+                    </div>
+                    <p className="text-white font-semibold leading-snug mb-3">{pillar.subtitle}</p>
+                    <div className="h-px w-full bg-white/10 mb-3" />
+                    <p className="text-xs font-mono text-textSecondary">{pillar.note}</p>
+                  </div>
+                </motion.article>
+              );
+            })}
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-black/25 backdrop-blur-md overflow-hidden">
