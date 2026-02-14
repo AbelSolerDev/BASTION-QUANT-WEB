@@ -10,7 +10,12 @@ interface ChatMessage {
 
 const STORAGE_KEY = 'bastion_openrouter_api_key';
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const OPENROUTER_MODEL = 'deepseek/deepseek-r1-0528:free';
+const OPENROUTER_MODELS = [
+  'stepfun/step-3.5-flash:free',
+  'deepseek/deepseek-r1-0528:free',
+  'qwen/qwen-2.5-72b-instruct:free',
+  'mistralai/mistral-7b-instruct:free',
+];
 
 const BASTION_CONTEXT = `
 BASTION Public Context:
@@ -35,8 +40,9 @@ Style Guide:
 const BastionChatbot: React.FC = () => {
   const initialKey = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) ?? '' : '';
   const [isOpen, setIsOpen] = useState(false);
-  const [apiKeyInput, setApiKeyInput] = useState(initialKey);
+  const [apiKeyInput, setApiKeyInput] = useState('');
   const [apiKey, setApiKey] = useState(initialKey);
+  const [keySavedAt, setKeySavedAt] = useState<number | null>(initialKey ? Date.now() : null);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -54,14 +60,18 @@ const BastionChatbot: React.FC = () => {
     setApiKey(normalized);
     if (normalized) {
       localStorage.setItem(STORAGE_KEY, normalized);
+      setApiKeyInput('');
+      setKeySavedAt(Date.now());
     } else {
       localStorage.removeItem(STORAGE_KEY);
+      setKeySavedAt(null);
     }
   };
 
   const clearApiKey = () => {
     setApiKey('');
     setApiKeyInput('');
+    setKeySavedAt(null);
     localStorage.removeItem(STORAGE_KEY);
   };
 
@@ -87,38 +97,53 @@ const BastionChatbot: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(OPENROUTER_URL, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'HTTP-Referer': window.location.origin,
-          'X-Title': 'BASTION QUANT Web',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: OPENROUTER_MODEL,
-          messages: [
-            { role: 'system', content: BASTION_CONTEXT },
-            ...nextMessages.slice(-12).map((m) => ({
-              role: m.role,
-              content: m.content,
-            })),
-          ],
-          temperature: 0.3,
-        }),
-      });
+      const requestMessages = [
+        { role: 'system', content: BASTION_CONTEXT },
+        ...nextMessages.slice(-12).map((m) => ({
+          role: m.role,
+          content: m.content,
+        })),
+      ];
 
-      const data = await response.json();
+      let content = '';
+      let lastError = 'No hay respuesta del proveedor.';
 
-      if (!response.ok) {
-        const apiError = data?.error?.message || `Error ${response.status}`;
-        throw new Error(apiError);
+      for (const model of OPENROUTER_MODELS) {
+        const response = await fetch(OPENROUTER_URL, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'HTTP-Referer': window.location.origin,
+            'X-Title': 'BASTION QUANT Web',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model,
+            messages: requestMessages,
+            temperature: 0.3,
+            max_tokens: 400,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          const apiError = data?.error?.message || `Error ${response.status}`;
+          lastError = `${model}: ${apiError}`;
+          continue;
+        }
+
+        content = data?.choices?.[0]?.message?.content?.trim() ?? '';
+        if (content) break;
       }
 
-      const content = data?.choices?.[0]?.message?.content?.trim();
+      if (!content) {
+        throw new Error(lastError);
+      }
+
       const assistantMsg: ChatMessage = {
         role: 'assistant',
-        content: content || 'No he recibido contenido del modelo. Prueba otra pregunta.',
+        content,
       };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (error) {
@@ -167,6 +192,11 @@ const BastionChatbot: React.FC = () => {
             <div className="flex items-center gap-2 mb-2">
               <KeyRound size={14} className="text-accentGold" />
               <span className="text-[11px] font-mono text-textSecondary">OpenRouter API Key (local)</span>
+              {hasKey && (
+                <span className="text-[10px] font-mono text-accentSuccess">
+                  {keySavedAt ? 'guardada' : 'activa'}
+                </span>
+              )}
             </div>
             <div className="flex gap-2">
               <input
@@ -248,4 +278,3 @@ const BastionChatbot: React.FC = () => {
 };
 
 export default BastionChatbot;
-
