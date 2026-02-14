@@ -10,7 +10,10 @@ import ScanlineOverlay from './components/ui/ScanlineOverlay';
 
 const Footer: React.FC = () => (
   <footer className="bg-bgPrimary border-t border-white/5 py-12 px-4 text-center relative z-50">
-    <p className="text-white font-bold font-display mb-2">BASTION QUANT</p>
+    <p className="text-white font-bold font-display mb-2">
+      BASTION
+      <sup className="ml-0.5 text-[10px] align-super text-white/70">®</sup>
+    </p>
     <p className="text-textSecondary text-sm mb-6">Infraestructura de trading cuantitativo institucional.</p>
     <p className="text-white/20 text-xs font-mono">2025-2026 | Privado & Confidencial</p>
   </footer>
