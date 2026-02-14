@@ -88,7 +88,7 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4"
+            className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4 pt-4"
           >
             <Link to="/catalog" className="w-full md:w-auto">
               <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-accentCyan to-accentViolet text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center border border-white/10">
@@ -99,6 +99,11 @@ const LandingPage: React.FC = () => {
             <Link to="/sentinel" className="w-full md:w-auto">
               <button className="w-full md:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-accentCyan/50 transition-all flex items-center justify-center backdrop-blur-md">
                 Descubrir SENTINEL
+              </button>
+            </Link>
+            <Link to="/forge" className="w-full md:w-auto">
+              <button className="w-full md:w-auto px-8 py-4 border border-accentOrange/35 text-accentOrange font-bold rounded-full hover:bg-accentOrange/10 hover:border-accentOrange transition-all flex items-center justify-center backdrop-blur-md">
+                Descubrir FORGE
               </button>
             </Link>
           </motion.div>

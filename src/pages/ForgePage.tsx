@@ -644,17 +644,15 @@ const ForgePage: React.FC = () => {
           <section className="mb-16">
             <div className="grid md:grid-cols-2 gap-4">
               <GlassCard className="!bg-black/30">
-                <h3 className="text-white font-bold mb-2">Stack tecnologico</h3>
+                <h3 className="text-white font-bold mb-2">Propuesta de valor</h3>
                 <p className="text-sm text-textSecondary leading-relaxed mb-3">
-                  PostgreSQL + TimescaleDB para series temporales, Celery + Redis para compute distribuido,
-                  DEAP para algoritmos geneticos, Polars para data wrangling de alta velocidad.
+                  FORGE convierte investigacion cuantitativa en una capacidad industrial: mas candidatos, mejor validacion y
+                  decisiones de despliegue con mayor evidencia.
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {['PostgreSQL', 'TimescaleDB', 'Celery', 'Redis', 'DEAP', 'Polars', 'FastAPI'].map((t, i) => (
-                    <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded font-mono text-textSecondary">
-                      {t}
-                    </span>
-                  ))}
+                <div className="space-y-2 text-xs font-mono text-textSecondary">
+                  <p>1. Descubrir alpha de forma sistematica.</p>
+                  <p>2. Reducir sesgo humano en validacion.</p>
+                  <p>3. Acelerar ciclo idea - validacion - produccion.</p>
                 </div>
               </GlassCard>
               <GlassCard className="!bg-black/30">
