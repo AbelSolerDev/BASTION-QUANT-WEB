@@ -559,15 +559,15 @@ const LandingPage: React.FC = () => {
       {/* SECTION 7: CTA */}
       <section className="py-32 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-bgPrimary z-0" />
-        <div className="absolute inset-0 z-0 opacity-75">
+        <div className="absolute inset-0 z-0 opacity-100">
           <MatrixBackground />
         </div>
-        <div className="absolute inset-0 z-0 mesh-gradient opacity-35 mix-blend-screen" />
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.20),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.22),transparent_45%)]" />
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(10,14,26,0.55)_0%,rgba(10,14,26,0.75)_100%)]" />
+        <div className="absolute inset-0 z-0 mesh-gradient opacity-55 mix-blend-screen" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.32),transparent_42%),radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.34),transparent_48%)]" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(10,14,26,0.32)_0%,rgba(10,14,26,0.58)_100%)]" />
         <div className="absolute inset-0 z-0 opacity-20 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.05)_50%,transparent_100%)] bg-[length:100%_5px]" />
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center rounded-3xl border border-white/10 bg-black/20 backdrop-blur-md px-6 md:px-12 py-14">
+        <div className="relative z-10 max-w-4xl mx-auto text-center rounded-3xl border border-white/10 bg-black/10 backdrop-blur-sm px-6 md:px-12 py-14">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Esto no es un bot.</h2>
           <p className="text-xl md:text-2xl text-textSecondary mb-12">Es infraestructura de trading cuantitativo institucional.</p>
 
