@@ -74,6 +74,10 @@ const Navbar: React.FC = () => {
                 <span className={`w-1.5 h-1.5 rounded-full ${location.pathname === '/sentinel' ? 'bg-accentDanger animate-pulse' : 'bg-gray-600'}`} />
                 Sentinel
               </Link>
+              <Link to="/forge" className={`hover:text-accentOrange transition-colors uppercase flex items-center gap-1 ${location.pathname === '/forge' ? 'text-accentOrange font-bold' : ''}`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${location.pathname === '/forge' ? 'bg-accentOrange animate-pulse' : 'bg-gray-600'}`} />
+                Forge
+              </Link>
             </div>
 
             <div className="h-6 w-[1px] bg-white/10" />
@@ -118,6 +122,10 @@ const Navbar: React.FC = () => {
                 <Link to="/sentinel" className="text-2xl font-display font-bold text-accentDanger border-b border-accentDanger/20 pb-4 flex items-center justify-between">
                   <span>03 // SENTINEL</span>
                   <span className="text-xs bg-accentDanger/20 px-2 py-1 rounded text-accentDanger font-mono">LIVE</span>
+                </Link>
+                <Link to="/forge" className="text-2xl font-display font-bold text-accentOrange border-b border-accentOrange/20 pb-4 flex items-center justify-between">
+                  <span>04 // FORGE</span>
+                  <span className="text-xs bg-accentOrange/20 px-2 py-1 rounded text-accentOrange font-mono">R&D</span>
                 </Link>
               </div>
 

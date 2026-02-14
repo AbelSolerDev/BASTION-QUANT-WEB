@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import CatalogPage from './pages/CatalogPage';
 import SentinelPage from './pages/SentinelPage';
+import ForgePage from './pages/ForgePage';
 import ScanlineOverlay from './components/ui/ScanlineOverlay';
 
 const Footer: React.FC = () => (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/sentinel" element={<SentinelPage />} />
+          <Route path="/forge" element={<ForgePage />} />
         </Routes>
         <Footer />
       </div>
