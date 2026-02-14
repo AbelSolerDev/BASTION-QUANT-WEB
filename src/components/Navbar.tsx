@@ -64,9 +64,6 @@ const Navbar: React.FC = () => {
           {/* --- DESKTOP NAVIGATION --- */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-6 text-xs font-mono tracking-wide text-textSecondary">
-              <Link to="/catalog" className={`hover:text-white transition-colors uppercase ${location.pathname === '/catalog' ? 'text-white font-bold' : ''}`}>
-                // Capacidades
-              </Link>
               <Link to="/sentinel" className={`hover:text-accentDanger transition-colors uppercase flex items-center gap-1 ${location.pathname === '/sentinel' ? 'text-accentDanger font-bold' : ''}`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${location.pathname === '/sentinel' ? 'bg-accentDanger animate-pulse' : 'bg-gray-600'}`} />
                 Sentinel
@@ -83,7 +80,7 @@ const Navbar: React.FC = () => {
               <button className="group relative px-5 py-2 overflow-hidden rounded bg-white/5 border border-white/10 hover:border-accentCyan/50 transition-all">
                 <div className="absolute inset-0 w-full h-full bg-accentCyan/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 <span className="relative text-xs font-mono font-bold text-white uppercase flex items-center gap-2">
-                  Acceso Docs <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  Capacidades Quant <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
             </Link>
@@ -114,7 +111,7 @@ const Navbar: React.FC = () => {
                   01 // DASHBOARD
                 </Link>
                 <Link to="/catalog" className="text-2xl font-display font-bold text-white border-b border-white/10 pb-4">
-                  02 // CAPACIDADES
+                  02 // CAPACIDADES QUANT
                 </Link>
                 <Link to="/sentinel" className="text-2xl font-display font-bold text-accentDanger border-b border-accentDanger/20 pb-4 flex items-center justify-between">
                   <span>03 // SENTINEL</span>
