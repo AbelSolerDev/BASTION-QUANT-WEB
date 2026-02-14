@@ -91,14 +91,19 @@ const LandingPage: React.FC = () => {
             className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4 pt-4"
           >
             <Link to="/catalog" className="w-full md:w-auto">
-              <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-accentCyan to-accentViolet text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center border border-white/10">
-                Explorar Infraestructura
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <button className="group relative w-full md:w-auto rounded-full p-[1px] bg-gradient-to-r from-accentCyan via-white/70 to-accentViolet hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all">
+                <span className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0b1222]/95 text-white font-bold tracking-[0.02em] group-hover:bg-[#0f1830]/95 transition-colors">
+                  Explorar Infraestructura
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </span>
               </button>
             </Link>
             <Link to="/sentinel" className="w-full md:w-auto">
-              <button className="w-full md:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-accentCyan/50 transition-all flex items-center justify-center backdrop-blur-md">
-                Descubrir SENTINEL
+              <button className="group w-full md:w-auto px-8 py-4 border border-accentDanger/40 text-accentDanger font-bold rounded-full hover:bg-accentDanger/10 hover:border-accentDanger transition-all flex items-center justify-center backdrop-blur-md">
+                <span className="inline-flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-accentDanger group-hover:animate-pulse" />
+                  Descubrir SENTINEL
+                </span>
               </button>
             </Link>
             <Link to="/forge" className="w-full md:w-auto">
