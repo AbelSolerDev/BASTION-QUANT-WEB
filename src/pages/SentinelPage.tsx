@@ -71,37 +71,37 @@ const SentinelPage: React.FC = () => {
       id: '02',
       icon: ShieldCheck,
       title: 'Contrato de autoridad',
-      desc: 'SENTINEL emite contexto y recomendaciones. QUANT conserva ejecucion y control operativo.',
+      desc: 'SENTINEL emite contexto y recomendaciones. QUANT conserva ejecución y control operativo.',
     },
     {
       id: '03',
       icon: Globe,
-      title: 'Contexto macro multi-senal',
-      desc: 'Integra volatilidad, liquidaciones, funding, stablecoins e indices sinteticos.',
+      title: 'Contexto macro multi-señal',
+      desc: 'Integra volatilidad, liquidaciones, funding, stablecoins e índices sintéticos.',
     },
     {
       id: '04',
       icon: Activity,
       title: 'Score compuesto',
-      desc: 'Fusiona inteligencia micro y macro para modular exposicion con disciplina.',
+      desc: 'Fusiona inteligencia micro y macro para modular exposición con disciplina.',
     },
     {
       id: '05',
       icon: RefreshCw,
-      title: 'Degradacion gracil',
-      desc: 'Si la conexion cae, QUANT no se detiene: reduce peso macro y mantiene continuidad.',
+      title: 'Degradación grácil',
+      desc: 'Si la conexión cae, QUANT no se detiene: reduce peso macro y mantiene continuidad.',
     },
     {
       id: '06',
       icon: AlertTriangle,
-      title: 'Jerarquia de decisiones',
-      desc: 'Una policy table resuelve conflictos y garantiza una unica accion operativa.',
+      title: 'Jerarquía de decisiones',
+      desc: 'Una policy table resuelve conflictos y garantiza una única acción operativa.',
     },
     {
       id: '07',
       icon: Wifi,
       title: 'Canal dual',
-      desc: 'Sincronizacion periodica con refuerzo de eventos criticos para menor latencia de reaccion.',
+      desc: 'Sincronización periódica con refuerzo de eventos críticos para menor latencia de reacción.',
     },
     {
       id: '08',
@@ -112,14 +112,14 @@ const SentinelPage: React.FC = () => {
     {
       id: '09',
       icon: Lock,
-      title: 'Separacion de roles',
-      desc: 'SENTINEL no ejecuta ordenes ni activa cierres. Es inteligencia de contexto, no motor de ejecucion.',
+      title: 'Separación de roles',
+      desc: 'SENTINEL no ejecuta órdenes ni activa cierres. Es inteligencia de contexto, no motor de ejecución.',
     },
     {
       id: '10',
       icon: Eye,
       title: 'Modo anticipatorio',
-      desc: 'Diseno definido para post-6.0: acciones preventivas con TTL y reversion controlada.',
+      desc: 'Diseño definido para post-6.0: acciones preventivas con TTL y reversión controlada.',
     },
     {
       id: '11',
@@ -131,7 +131,7 @@ const SentinelPage: React.FC = () => {
       id: '12',
       icon: Cpu,
       title: 'Roadmap separado',
-      desc: 'El microservicio real de SENTINEL se construye despues de consolidar QUANT en produccion.',
+      desc: 'El microservicio real de SENTINEL se construye después de consolidar QUANT en producción.',
     },
   ];
 
@@ -183,7 +183,7 @@ const SentinelPage: React.FC = () => {
                   Inteligencia macro para proteger decisiones de trading.
                   <br />
                   <span className="text-accentCyan font-bold bg-accentCyan/10 px-1">
-                    Contexto, evidencia y control de exposicion.
+                    Contexto, evidencia y control de exposición.
                   </span>
                 </p>
                 <p className="text-textSecondary mt-6 text-sm font-mono border-t border-white/10 pt-4">
@@ -203,10 +203,10 @@ const SentinelPage: React.FC = () => {
 
             <div className="mt-8 max-w-4xl border border-accentCyan/25 bg-accentCyan/5 rounded-xl px-5 py-4">
               <p className="text-xs md:text-sm text-textSecondary font-mono">
-                ESTADO REAL: SENTINEL ESTA INTEGRADO EN QUANT COMO CAPA MOCK Y DE MODULACION.
+                ESTADO REAL: SENTINEL ESTÁ INTEGRADO EN QUANT COMO CAPA MOCK Y DE MODULACIÓN.
                 <span className="text-white">
                   {' '}
-                  El microservicio independiente se activa post-6.0, tras estabilizar el core OMS/EMS en produccion.
+                  El microservicio independiente se activa post-6.0, tras estabilizar el core OMS/EMS en producción.
                 </span>
               </p>
             </div>
@@ -218,23 +218,23 @@ const SentinelPage: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-4">
               <GlassCard className="!bg-black/35 !border-accentCyan/20">
                 <div className="text-xs font-mono text-accentCyan mb-2">ESTADO REAL</div>
-                <h3 className="text-white font-bold mb-2">Integracion operativa activa</h3>
+                <h3 className="text-white font-bold mb-2">Integración operativa activa</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
-                  MockSentinel, score compuesto, degradacion gracil y capa visual ya operan dentro de QUANT.
+                  MockSentinel, score compuesto, degradación grácil y capa visual ya operan dentro de QUANT.
                 </p>
               </GlassCard>
               <GlassCard className="!bg-black/35 !border-accentGold/20">
                 <div className="text-xs font-mono text-accentGold mb-2">CONTRATO</div>
                 <h3 className="text-white font-bold mb-2">Emitir no es ejecutar</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
-                  SENTINEL informa y recomienda. La ejecucion, los cierres y la seguridad final pertenecen a QUANT.
+                  SENTINEL informa y recomienda. La ejecución, los cierres y la seguridad final pertenecen a QUANT.
                 </p>
               </GlassCard>
               <GlassCard className="!bg-black/35 !border-accentViolet/20">
                 <div className="text-xs font-mono text-accentViolet mb-2">PROYECCION</div>
                 <h3 className="text-white font-bold mb-2">Microservicio post-6.0</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
-                  La version independiente se construye despues de completar paper, canary y salida estable.
+                  La versión independiente se construye después de completar paper, canary y salida estable.
                 </p>
               </GlassCard>
             </div>
@@ -243,7 +243,7 @@ const SentinelPage: React.FC = () => {
           <div className="mt-24 mb-24">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-mono text-white flex items-center gap-2">
-                <Cpu className="text-accentDanger" /> MODULOS DE VIGILANCIA
+                <Cpu className="text-accentDanger" /> MÓDULOS DE VIGILANCIA
               </h2>
               <span className="text-xs font-mono text-accentDanger animate-pulse">ROADMAP CONTROLLED</span>
             </div>
@@ -293,7 +293,7 @@ const SentinelPage: React.FC = () => {
                   <div className="absolute top-4 right-4 opacity-50">
                     <Wifi size={20} className="text-accentSuccess" />
                   </div>
-                  <div className="text-xs font-mono text-accentSuccess mb-2">ESTADO: OPTIMO</div>
+                  <div className="text-xs font-mono text-accentSuccess mb-2">ESTADO: ÓPTIMO</div>
                   <h3 className="text-2xl font-bold text-white mb-4">ONLINE</h3>
                   <ul className="space-y-2 text-sm text-textSecondary">
                     <li className="flex justify-between border-b border-white/5 pb-1">
@@ -307,7 +307,7 @@ const SentinelPage: React.FC = () => {
                     </li>
                   </ul>
                   <div className="mt-4 text-xs text-textSecondary bg-accentSuccess/5 p-2 rounded border border-accentSuccess/10">
-                    Sinapsis completa con decisiones compuestas de maxima calidad.
+                    Sinapsis completa con decisiones compuestas de máxima calidad.
                   </div>
                 </div>
 
@@ -329,7 +329,7 @@ const SentinelPage: React.FC = () => {
                     </li>
                   </ul>
                   <div className="mt-4 text-xs text-textSecondary bg-accentGold/5 p-2 rounded border border-accentGold/10">
-                    Continuidad operativa con enfoque mas conservador y menor influencia macro.
+                    Continuidad operativa con enfoque más conservador y menor influencia macro.
                   </div>
                 </div>
 
@@ -337,7 +337,7 @@ const SentinelPage: React.FC = () => {
                   <div className="absolute top-4 right-4 opacity-50">
                     <CloudOff size={20} className="text-accentDanger" />
                   </div>
-                  <div className="text-xs font-mono text-accentDanger mb-2">ESTADO: CRITICO</div>
+                  <div className="text-xs font-mono text-accentDanger mb-2">ESTADO: CRÍTICO</div>
                   <h3 className="text-2xl font-bold text-white mb-4">OFFLINE</h3>
                   <ul className="space-y-2 text-sm text-textSecondary">
                     <li className="flex justify-between border-b border-white/5 pb-1">
@@ -351,14 +351,14 @@ const SentinelPage: React.FC = () => {
                     </li>
                   </ul>
                   <div className="mt-4 text-xs text-textSecondary bg-accentDanger/5 p-2 rounded border border-accentDanger/10">
-                    QUANT mantiene autonomia. Politica configurable: continuidad plena o reduccion preventiva.
+                    QUANT mantiene autonomía. Política configurable: continuidad plena o reducción preventiva.
                   </div>
                 </div>
               </div>
 
               <div className="bg-accentDanger/10 p-3 text-center border-t border-accentDanger/20">
                 <p className="text-xs font-mono text-accentDanger font-bold animate-pulse">
-                  SENTINEL NUNCA EJECUTA ORDENES NI ACTIVA KILL SWITCH. SOLO INFORMA Y MODULA.
+                  SENTINEL NUNCA EJECUTA ÓRDENES NI ACTIVA KILL SWITCH. SOLO INFORMA Y MODULA.
                 </p>
               </div>
             </div>
@@ -369,14 +369,14 @@ const SentinelPage: React.FC = () => {
               <GlassCard className="!bg-black/30">
                 <h3 className="text-white font-bold mb-2">Modo anticipatorio (post-6.0)</h3>
                 <p className="text-sm text-textSecondary leading-relaxed">
-                  Diseno orientado a reducir exposicion antes de eventos macro con overlays de tiempo limitado y reversion
+                  Diseño orientado a reducir exposición antes de eventos macro con overlays de tiempo limitado y reversión
                   controlada.
                 </p>
               </GlassCard>
               <GlassCard className="!bg-black/30">
                 <h3 className="text-white font-bold mb-2">Principio de independencia</h3>
                 <p className="text-sm text-textSecondary leading-relaxed">
-                  QUANT puede operar sin SENTINEL en modo autonomo. SENTINEL amplifica calidad de decision, no sustituye el core.
+                  QUANT puede operar sin SENTINEL en modo autónomo. SENTINEL amplifica calidad de decisión, no sustituye el core.
                 </p>
               </GlassCard>
             </div>

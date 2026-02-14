@@ -49,25 +49,25 @@ const MAX_CHARS_COMPACT = 1400;
 const BASTION_CONTEXT = `
 BASTION Public Context:
 - BASTION QUANT: infraestructura de trading cuantitativo institucional.
-- Estado principal: roadmap activo hasta fase 6.0 (paper -> canary -> produccion).
-- Foco: seguridad operativa, trazabilidad, disciplina de ejecucion y control de riesgo.
+- Estado principal: roadmap activo hasta fase 6.0 (paper -> canary -> producción).
+- Foco: seguridad operativa, trazabilidad, disciplina de ejecución y control de riesgo.
 
 - SENTINEL: programa separado de inteligencia macro (post-6.0).
 - Principio: SENTINEL emite contexto/recomendaciones; QUANT ejecuta.
-- No debe presentarse como motor de ejecucion.
+- No debe presentarse como motor de ejecución.
 
-- FORGE: programa separado de investigacion de estrategias (post-6.0).
+- FORGE: programa separado de investigación de estrategias (post-6.0).
 - Rol: descubrir, validar y evolucionar estrategias.
-- FORGE no ejecuta ordenes, entrega paquetes de estrategia para QUANT.
+- FORGE no ejecuta órdenes, entrega paquetes de estrategia para QUANT.
 
 Style Guide:
 - Responde en espanol claro y profesional.
 - Usa markdown simple y limpio (negritas y listas cuando aporte claridad).
 - Respuesta por defecto concisa: 90-160 palabras.
 - Evita tablas markdown con "|"; usa listas o bloques cortos.
-- Si el usuario no pide detalle explicito, no excedas 8 lineas.
-- No inventes funciones no descritas; si falta informacion, dilo.
-- Priorizacion: seguridad, governance y claridad operativa.
+- Si el usuario no pide detalle explícito, no excedas 8 líneas.
+- No inventes funciones no descritas; si falta información, dilo.
+- Priorización: seguridad, governance y claridad operativa.
 `;
 
 const renderInlineMarkdown = (text: string): React.ReactNode[] => {
@@ -134,7 +134,7 @@ const compactAssistantContent = (content: string, wantsDetail: boolean): string 
     .trim();
 
   if (!wantsDetail && next.length > MAX_CHARS_COMPACT) {
-    next = `${next.slice(0, MAX_CHARS_COMPACT).replace(/\s+\S*$/, '')}\n\n[Respuesta resumida para mantener legibilidad. Pide "mas detalle" si quieres ampliar.]`;
+    next = `${next.slice(0, MAX_CHARS_COMPACT).replace(/\s+\S*$/, '')}\n\n[Respuesta resumida para mantener legibilidad. Pide "más detalle" si quieres ampliar.]`;
   }
 
   return next;

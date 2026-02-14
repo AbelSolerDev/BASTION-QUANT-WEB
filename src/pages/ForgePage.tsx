@@ -104,35 +104,35 @@ const ForgePage: React.FC = () => {
       icon: Hammer,
       title: 'PROSPECTOR',
       subtitle: 'Descubrimiento de Alpha',
-      desc: 'Genera cientos de hipotesis diarias combinando factores, reglas y regimenes de mercado. Busca alpha donde el humano no llega.',
+      desc: 'Genera cientos de hipótesis diarias combinando factores, reglas y regímenes de mercado. Busca alpha donde el humano no llega.',
     },
     {
       id: '02',
       icon: FlaskConical,
       title: 'CRUCIBLE',
-      subtitle: 'El Crisol de Validacion',
-      desc: 'Walk-Forward, Monte Carlo, Stress Forge y Champion/Challenger automatico. Solo sobreviven las estrategias que resisten todo.',
+      subtitle: 'El Crisol de Validación',
+      desc: 'Walk-Forward, Monte Carlo, Stress Forge y Champion/Challenger automático. Solo sobreviven las estrategias que resisten todo.',
     },
     {
       id: '03',
       icon: Scale,
       title: 'ARBITER',
-      subtitle: 'Atribucion de Rendimiento',
-      desc: 'Descompone el PnL en factores: skill vs luck vs mercado. Identifica que funciona realmente y por que.',
+      subtitle: 'Atribución de Rendimiento',
+      desc: 'Descompone el PnL en factores: skill vs luck vs mercado. Identifica qué funciona realmente y por qué.',
     },
     {
       id: '04',
       icon: RotateCcw,
       title: 'LIFECYCLE',
-      subtitle: 'Gestion del Ciclo de Vida',
-      desc: 'Monitoriza decay continuo, recomienda retiros, gestiona la transicion Champion/Challenger en produccion.',
+      subtitle: 'Gestión del Ciclo de Vida',
+      desc: 'Monitoriza decay continuo, recomienda retiros, gestiona la transición Champion/Challenger en producción.',
     },
     {
       id: '05',
       icon: Archive,
       title: 'ARCHIVE',
       subtitle: 'Base de Conocimiento',
-      desc: 'Preserva cada experimento: hipotesis, datos, resultados, decisiones. Nada se pierde. Todo se aprende.',
+      desc: 'Preserva cada experimento: hipótesis, datos, resultados, decisiones. Nada se pierde. Todo se aprende.',
     },
   ];
 
@@ -184,7 +184,7 @@ const ForgePage: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 mt-12 items-start">
               <div className="max-w-xl">
                 <p className="text-xl md:text-2xl text-textPrimary font-light leading-relaxed">
-                  Investigacion cuantitativa automatizada para descubrir,
+                  Investigación cuantitativa automatizada para descubrir,
                   validar y evolucionar estrategias.
                   <br />
                   <span className="text-accentOrange font-bold bg-accentOrange/10 px-1">
@@ -208,10 +208,10 @@ const ForgePage: React.FC = () => {
 
             <div className="mt-8 max-w-4xl border border-accentOrange/25 bg-accentOrange/5 rounded-xl px-5 py-4">
               <p className="text-xs md:text-sm text-textSecondary font-mono">
-                ESTADO: BASTION FORGE ESTA EN FASE DE DISENO ARQUITECTONICO.
+                ESTADO: BASTION FORGE ESTÁ EN FASE DE DISEÑO ARQUITECTÓNICO.
                 <span className="text-white">
                   {' '}
-                  La construccion se inicia tras estabilizar QUANT en produccion (post-6.0). Arquitectura completa definida.
+                  La construcción se inicia tras estabilizar QUANT en producción (post-6.0). Arquitectura completa definida.
                 </span>
               </p>
             </div>
@@ -228,14 +228,14 @@ const ForgePage: React.FC = () => {
                 <h3 className="text-white font-bold mb-2">Sin FORGE, el alpha es artesanal</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
                   Inventar estrategias manualmente es lento, sesgado y no escala.
-                  Nadie detecta cuando una estrategia muere ni por que gano.
+                  Nadie detecta cuando una estrategia muere ni por qué ganó.
                 </p>
               </GlassCard>
               <GlassCard className="!bg-black/35 !border-accentGold/20">
-                <div className="text-xs font-mono text-accentGold mb-2">SOLUCION</div>
+                <div className="text-xs font-mono text-accentGold mb-2">SOLUCIÓN</div>
                 <h3 className="text-white font-bold mb-2">Industrializar el descubrimiento</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
-                  FORGE genera cientos de candidatas por dia, las valida rigurosamente,
+                  FORGE genera cientos de candidatas por día, las valida rigurosamente,
                   atribuye rendimiento por factores y gestiona el ciclo de vida completo.
                 </p>
               </GlassCard>
@@ -244,7 +244,7 @@ const ForgePage: React.FC = () => {
                 <h3 className="text-white font-bold mb-2">Investigar, nunca ejecutar</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
                   FORGE es un laboratorio. Genera estrategias empaquetadas
-                  listas para que QUANT las despliegue. Nunca toca ordenes reales.
+                  listas para que QUANT las despliegue. Nunca toca órdenes reales.
                 </p>
               </GlassCard>
             </div>
@@ -258,7 +258,7 @@ const ForgePage: React.FC = () => {
               <div className="bg-white/5 p-4 border-b border-white/10 flex justify-between items-center">
                 <div className="flex gap-2 items-center">
                   <Layers size={16} className="text-accentOrange" />
-                  <span className="font-mono text-sm font-bold text-white tracking-wider">TRIANGULO BASTION</span>
+                  <span className="font-mono text-sm font-bold text-white tracking-wider">TRIÁNGULO BASTION</span>
                 </div>
                 <div className="flex gap-1">
                   <div className="w-2 h-2 rounded-full bg-accentOrange" />
@@ -277,7 +277,7 @@ const ForgePage: React.FC = () => {
                   <h3 className="text-2xl font-bold text-white mb-4">FORGE</h3>
                   <ul className="space-y-2 text-sm text-textSecondary">
                     <li className="flex justify-between border-b border-white/5 pb-1">
-                      <span>Funcion</span> <span className="text-white">Investigar</span>
+                      <span>Función</span> <span className="text-white">Investigar</span>
                     </li>
                     <li className="flex justify-between border-b border-white/5 pb-1">
                       <span>Frecuencia</span> <span className="text-white">Batch (horas)</span>
@@ -310,7 +310,7 @@ const ForgePage: React.FC = () => {
                     </li>
                   </ul>
                   <div className="mt-4 text-xs text-textSecondary bg-accentCyan/5 p-2 rounded border border-accentCyan/10">
-                    Acciones. OMS, EMS, gestion de riesgo, ordenes reales y backtesting.
+                    Acciones. OMS, EMS, gestión de riesgo, órdenes reales y backtesting.
                   </div>
                 </div>
 
@@ -323,7 +323,7 @@ const ForgePage: React.FC = () => {
                   <h3 className="text-2xl font-bold text-white mb-4">SENTINEL</h3>
                   <ul className="space-y-2 text-sm text-textSecondary">
                     <li className="flex justify-between border-b border-white/5 pb-1">
-                      <span>Funcion</span> <span className="text-white">Vigilar</span>
+                      <span>Función</span> <span className="text-white">Vigilar</span>
                     </li>
                     <li className="flex justify-between border-b border-white/5 pb-1">
                       <span>Frecuencia</span> <span className="text-white">1 Hz</span>
@@ -333,14 +333,14 @@ const ForgePage: React.FC = () => {
                     </li>
                   </ul>
                   <div className="mt-4 text-xs text-textSecondary bg-accentDanger/5 p-2 rounded border border-accentDanger/10">
-                    Reflejos. Riesgo de mercado, contexto macro, modulacion de exposicion.
+                    Reflejos. Riesgo de mercado, contexto macro, modulación de exposición.
                   </div>
                 </div>
               </div>
 
               <div className="bg-accentOrange/10 p-3 text-center border-t border-accentOrange/20">
                 <p className="text-xs font-mono text-accentOrange font-bold animate-pulse">
-                  CADA SISTEMA ES AUTONOMO. JUNTOS FORMAN UN CICLO CERRADO DE MEJORA CONTINUA.
+                  CADA SISTEMA ES AUTÓNOMO. JUNTOS FORMAN UN CICLO CERRADO DE MEJORA CONTINUA.
                 </p>
               </div>
             </div>
@@ -350,7 +350,7 @@ const ForgePage: React.FC = () => {
           <div className="mt-24 mb-24">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-mono text-white flex items-center gap-2">
-                <Flame className="text-accentOrange" /> MODULOS DE LA FRAGUA
+                <Flame className="text-accentOrange" /> MÓDULOS DE LA FRAGUA
               </h2>
               <span className="text-xs font-mono text-accentOrange animate-pulse">5 CORE MODULES</span>
             </div>
@@ -391,28 +391,28 @@ const ForgePage: React.FC = () => {
               <div className="border border-white/10 bg-[#050505] rounded-2xl p-8">
                 <PipelineStep
                   num="01"
-                  title="Generacion de hipotesis"
-                  desc="PROSPECTOR combina factores, reglas y regimenes para generar cientos de candidatas. Gramatica evolutiva + busqueda combinatoria."
+                  title="Generación de hipótesis"
+                  desc="PROSPECTOR combina factores, reglas y regímenes para generar cientos de candidatas. Gramática evolutiva + búsqueda combinatoria."
                   icon={Search}
                   color="bg-accentOrange/20"
                 />
                 <PipelineStep
                   num="02"
-                  title="Filtrado rapido"
-                  desc="Backtest ligero descarta el 95%. Solo las que superan Sharpe minimo, drawdown maximo y correlacion baja avanzan al Crisol."
+                  title="Filtrado rápido"
+                  desc="Backtest ligero descarta el 95%. Solo las que superan Sharpe mínimo, drawdown máximo y correlación baja avanzan al Crisol."
                   icon={Zap}
                   color="bg-accentGold/20"
                 />
                 <PipelineStep
                   num="03"
-                  title="Validacion rigurosa"
-                  desc="CRUCIBLE aplica Walk-Forward, Monte Carlo (1000 permutaciones), Stress Forge y analisis de regimen. Duracion: horas."
+                  title="Validación rigurosa"
+                  desc="CRUCIBLE aplica Walk-Forward, Monte Carlo (1000 permutaciones), Stress Forge y análisis de régimen. Duración: horas."
                   icon={FlaskConical}
                   color="bg-accentCyan/20"
                 />
                 <PipelineStep
                   num="04"
-                  title="Atribucion y empaquetado"
+                  title="Atribución y empaquetado"
                   desc="ARBITER descompone el PnL en factores. Si el alpha es genuino, se empaqueta como StrategyPackage listo para QUANT."
                   icon={Package}
                   color="bg-accentViolet/20"
@@ -420,7 +420,7 @@ const ForgePage: React.FC = () => {
                 <PipelineStep
                   num="05"
                   title="Despliegue y monitoreo"
-                  desc="LIFECYCLE gestiona Champion/Challenger en produccion, detecta decay continuo y recomienda retiros cuando el alpha muere."
+                  desc="LIFECYCLE gestiona Champion/Challenger en producción, detecta decay continuo y recomienda retiros cuando el alpha muere."
                   icon={RotateCcw}
                   color="bg-accentDanger/20"
                   isLast
@@ -430,11 +430,11 @@ const ForgePage: React.FC = () => {
               {/* Right: Stats + Strategy Package */}
               <div className="flex flex-col gap-4">
                 <GlassCard className="!bg-black/35 !border-accentOrange/20">
-                  <div className="text-xs font-mono text-accentOrange mb-4">METRICAS PROYECTADAS</div>
+                  <div className="text-xs font-mono text-accentOrange mb-4">MÉTRICAS PROYECTADAS</div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <div className="text-3xl font-display font-bold text-white">500+</div>
-                      <div className="text-xs text-textSecondary">Hipotesis/dia</div>
+                      <div className="text-xs text-textSecondary">Hipótesis/día</div>
                     </div>
                     <div>
                       <div className="text-3xl font-display font-bold text-white">~5%</div>
@@ -446,7 +446,7 @@ const ForgePage: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-3xl font-display font-bold text-accentGold">24h</div>
-                      <div className="text-xs text-textSecondary">TTL validacion</div>
+                      <div className="text-xs text-textSecondary">TTL validación</div>
                     </div>
                   </div>
                 </GlassCard>
@@ -459,11 +459,11 @@ const ForgePage: React.FC = () => {
                   </p>
                   <div className="space-y-2 font-mono text-xs">
                     {[
-                      'Codigo fuente de la estrategia',
-                      'Parametros optimizados + rangos',
+                      'Código fuente de la estrategia',
+                      'Parámetros optimizados + rangos',
                       'Risk limits (max drawdown, sizing)',
                       'Regime mappings (bull/bear/sideways)',
-                      'Metadata de validacion completa',
+                      'Metadata de validación completa',
                       'Factor attribution report',
                       'Decay baseline metrics',
                       'Hash SHA-256 de integridad',
@@ -489,7 +489,7 @@ const ForgePage: React.FC = () => {
 
             <div className="border border-white/10 bg-[#050505] rounded-2xl overflow-hidden">
               <div className="bg-white/5 p-4 border-b border-white/10 flex justify-between items-center">
-                <span className="font-mono text-sm font-bold text-white tracking-wider">FRAMEWORK DE PROMOCION</span>
+                <span className="font-mono text-sm font-bold text-white tracking-wider">FRAMEWORK DE PROMOCIÓN</span>
                 <div className="text-xs font-mono text-accentGold animate-pulse">ZERO DOWNTIME</div>
               </div>
 
@@ -502,11 +502,11 @@ const ForgePage: React.FC = () => {
                   <h3 className="text-xl font-bold text-white mb-4">Modo Fantasma</h3>
                   <p className="text-sm text-textSecondary leading-relaxed">
                     La nueva estrategia opera en shadow junto al champion.
-                    Recibe las mismas senales pero no ejecuta ordenes reales.
-                    FORGE compara metricas en tiempo real.
+                    Recibe las mismas señales pero no ejecuta órdenes reales.
+                    FORGE compara métricas en tiempo real.
                   </p>
                   <div className="mt-4 flex gap-2">
-                    <span className="text-[10px] bg-accentCyan/10 text-accentCyan px-2 py-1 rounded font-mono">7-14 DIAS</span>
+                    <span className="text-[10px] bg-accentCyan/10 text-accentCyan px-2 py-1 rounded font-mono">7-14 DÍAS</span>
                     <span className="text-[10px] bg-white/5 text-textSecondary px-2 py-1 rounded font-mono">SIN RIESGO</span>
                   </div>
                 </div>
@@ -519,11 +519,11 @@ const ForgePage: React.FC = () => {
                   <h3 className="text-xl font-bold text-white mb-4">Capital Parcial</h3>
                   <p className="text-sm text-textSecondary leading-relaxed">
                     Si supera shadow, recibe 10-25% del capital asignado.
-                    Metricas en vivo vs champion. Rollback automatico si
+                    Métricas en vivo vs champion. Rollback automático si
                     drawdown excede umbral.
                   </p>
                   <div className="mt-4 flex gap-2">
-                    <span className="text-[10px] bg-accentGold/10 text-accentGold px-2 py-1 rounded font-mono">14-30 DIAS</span>
+                    <span className="text-[10px] bg-accentGold/10 text-accentGold px-2 py-1 rounded font-mono">14-30 DÍAS</span>
                     <span className="text-[10px] bg-white/5 text-textSecondary px-2 py-1 rounded font-mono">RIESGO LIMITADO</span>
                   </div>
                 </div>
@@ -535,12 +535,12 @@ const ForgePage: React.FC = () => {
                   <div className="text-xs font-mono text-accentOrange mb-2">FASE 3: PROMOTION</div>
                   <h3 className="text-xl font-bold text-white mb-4">Nuevo Champion</h3>
                   <p className="text-sm text-textSecondary leading-relaxed">
-                    Si supera al champion en Sharpe, drawdown y correlacion,
-                    FORGE recomienda promocion. Abel aprueba. El antiguo
+                    Si supera al champion en Sharpe, drawdown y correlación,
+                    FORGE recomienda promoción. Abel aprueba. El antiguo
                     champion pasa a archive.
                   </p>
                   <div className="mt-4 flex gap-2">
-                    <span className="text-[10px] bg-accentOrange/10 text-accentOrange px-2 py-1 rounded font-mono">APROBACION HUMANA</span>
+                    <span className="text-[10px] bg-accentOrange/10 text-accentOrange px-2 py-1 rounded font-mono">APROBACIÓN HUMANA</span>
                     <span className="text-[10px] bg-white/5 text-textSecondary px-2 py-1 rounded font-mono">FULL CAPITAL</span>
                   </div>
                 </div>
@@ -551,18 +551,18 @@ const ForgePage: React.FC = () => {
           {/* ── Strategy Decay Detection ── */}
           <section className="mb-24">
             <h2 className="text-2xl font-mono text-white flex items-center gap-2 mb-8">
-              <TrendingDown className="text-accentDanger" /> DETECCION DE DECAY
+              <TrendingDown className="text-accentDanger" /> DETECCIÓN DE DECAY
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
               <GlassCard className="!bg-black/35 !border-accentDanger/20">
-                <div className="text-xs font-mono text-accentDanger mb-4">SENALES DE DECAY</div>
+                <div className="text-xs font-mono text-accentDanger mb-4">SEÑALES DE DECAY</div>
                 <div className="space-y-3">
                   {[
                     { signal: 'Sharpe decae >40% vs baseline', level: 'WARNING' },
-                    { signal: 'Drawdown supera 2x historico', level: 'CRITICAL' },
-                    { signal: 'Win-rate cae >20% en ventana movil', level: 'WARNING' },
-                    { signal: 'Correlacion con mercado sube >0.8', level: 'CRITICAL' },
+                    { signal: 'Drawdown supera 2x histórico', level: 'CRITICAL' },
+                    { signal: 'Win-rate cae >20% en ventana móvil', level: 'WARNING' },
+                    { signal: 'Correlación con mercado sube >0.8', level: 'CRITICAL' },
                     { signal: 'Factor exposure cambia de signo', level: 'REVIEW' },
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center text-sm border-b border-white/5 pb-2">
@@ -592,7 +592,7 @@ const ForgePage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-white text-sm font-bold">Alerta temprana</p>
-                      <p className="text-xs text-textSecondary">LIFECYCLE detecta anomalia, reduce sizing 50%</p>
+                      <p className="text-xs text-textSecondary">LIFECYCLE detecta anomalía, reduce sizing 50%</p>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -601,7 +601,7 @@ const ForgePage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-white text-sm font-bold">Periodo de gracia</p>
-                      <p className="text-xs text-textSecondary">14 dias para recuperarse o confirmar decay</p>
+                      <p className="text-xs text-textSecondary">14 días para recuperarse o confirmar decay</p>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -626,11 +626,11 @@ const ForgePage: React.FC = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
               {[
-                { title: 'Solo QUANT ejecuta', desc: 'FORGE nunca envia ordenes al exchange' },
-                { title: 'Validacion triple', desc: 'Walk-Forward + Monte Carlo + Stress obligatorios' },
-                { title: 'Aprobacion humana', desc: 'Toda promocion requiere confirmacion de Abel' },
+                { title: 'Solo QUANT ejecuta', desc: 'FORGE nunca envía órdenes al exchange' },
+                { title: 'Validación triple', desc: 'Walk-Forward + Monte Carlo + Stress obligatorios' },
+                { title: 'Aprobación humana', desc: 'Toda promoción requiere confirmación de Abel' },
                 { title: 'Inmutabilidad', desc: 'StrategyPackage firmado, nunca se modifica post-deploy' },
-                { title: 'Archive total', desc: 'Ningun experimento se borra. Todo se preserva' },
+                { title: 'Archive total', desc: 'Ningún experimento se borra. Todo se preserva' },
               ].map((p, i) => (
                 <GlassCard key={i} className="!bg-black/40 !border-white/5 !p-4">
                   <div className="text-accentOrange font-bold text-xs font-mono mb-2 uppercase">{p.title}</div>
@@ -646,20 +646,20 @@ const ForgePage: React.FC = () => {
               <GlassCard className="!bg-black/30">
                 <h3 className="text-white font-bold mb-2">Propuesta de valor</h3>
                 <p className="text-sm text-textSecondary leading-relaxed mb-3">
-                  FORGE convierte investigacion cuantitativa en una capacidad industrial: mas candidatos, mejor validacion y
+                  FORGE convierte investigación cuantitativa en una capacidad industrial: más candidatos, mejor validación y
                   decisiones de despliegue con mayor evidencia.
                 </p>
                 <div className="space-y-2 text-xs font-mono text-textSecondary">
-                  <p>1. Descubrir alpha de forma sistematica.</p>
-                  <p>2. Reducir sesgo humano en validacion.</p>
-                  <p>3. Acelerar ciclo idea - validacion - produccion.</p>
+                  <p>1. Descubrir alpha de forma sistemática.</p>
+                  <p>2. Reducir sesgo humano en validación.</p>
+                  <p>3. Acelerar ciclo idea - validación - producción.</p>
                 </div>
               </GlassCard>
               <GlassCard className="!bg-black/30">
                 <h3 className="text-white font-bold mb-2">Principio de independencia</h3>
                 <p className="text-sm text-textSecondary leading-relaxed">
                   QUANT puede operar sin FORGE con estrategias manuales (estado actual).
-                  FORGE puede funcionar como lab de investigacion puro sin QUANT ni SENTINEL.
+                  FORGE puede funcionar como lab de investigación puro sin QUANT ni SENTINEL.
                   Los tres juntos cierran el ciclo: descubrir, vigilar, ejecutar, medir, aprender.
                 </p>
               </GlassCard>

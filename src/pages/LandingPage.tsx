@@ -78,8 +78,8 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Plataforma cuantitativa con validacion estadistica, control operativo por capas y trazabilidad completa de
-            decisiones. Fase 3.4 en ejecucion con ruta definida hasta 6.0.
+            Plataforma cuantitativa con validación estadística, control operativo por capas y trazabilidad completa de
+            decisiones. Fase 3.4 en ejecución con ruta definida hasta 6.0.
             <br />
             <strong className="text-white">No es un bot. Es infraestructura financiera.</strong>
           </motion.p>
@@ -147,10 +147,10 @@ const LandingPage: React.FC = () => {
               Reality Check
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Los bots retail te estan <span className="text-accentDanger">mintiendo</span>.
+              Los bots retail te están <span className="text-accentDanger">mintiendo</span>.
             </h2>
             <p className="text-textSecondary max-w-3xl mx-auto">
-              El problema no es la promesa comercial. El problema es operar sin disciplina matematica, validacion robusta y
+              El problema no es la promesa comercial. El problema es operar sin disciplina matemática, validación robusta y
               control institucional de riesgo.
             </p>
           </div>
@@ -161,11 +161,11 @@ const LandingPage: React.FC = () => {
                 icon: Calculator,
                 id: '01',
                 tag: 'RIESGO CONTABLE',
-                title: 'Aritmetica no determinista',
+                title: 'Aritmética no determinista',
                 description:
-                  'Usan float para dinero. El error acumulado no se ve en una operacion; se ve al final del trimestre.',
+                  'Usan float para dinero. El error acumulado no se ve en una operación; se ve al final del trimestre.',
                 impact: 'Impacto: PnL distorsionado y sizing mal calibrado.',
-                cover: 'Cobertura BASTION: calculo decimal en toda la cadena.',
+                cover: 'Cobertura BASTION: cálculo decimal en toda la cadena.',
               },
               {
                 icon: EyeOff,
@@ -173,8 +173,8 @@ const LandingPage: React.FC = () => {
                 tag: 'RIESGO DE MODELO',
                 title: 'Backtesting de escaparate',
                 description:
-                  'Confunden demostracion con validacion. El resultado parece brillante hasta que enfrenta mercado real.',
-                impact: 'Impacto: expectativa inflada y sobreexposicion.',
+                  'Confunden demostración con validación. El resultado parece brillante hasta que enfrenta mercado real.',
+                impact: 'Impacto: expectativa inflada y sobreexposición.',
                 cover: 'Cobertura BASTION: walk-forward, Monte Carlo y stress testing.',
               },
               {
@@ -183,8 +183,8 @@ const LandingPage: React.FC = () => {
                 tag: 'RIESGO OPERATIVO',
                 title: 'Sin protocolo de contingencia',
                 description:
-                  'Cuando falla exchange, red o reconciliacion, el sistema queda sin gobierno y reacciona tarde.',
-                impact: 'Impacto: perdidas evitables en escenarios extremos.',
+                  'Cuando falla exchange, red o reconciliación, el sistema queda sin gobierno y reacciona tarde.',
+                impact: 'Impacto: pérdidas evitables en escenarios extremos.',
                 cover: 'Cobertura BASTION: kill protocol, safety gates y trazabilidad.',
               },
             ].map((item, idx) => {
@@ -221,13 +221,13 @@ const LandingPage: React.FC = () => {
 
           <div className="mt-8 grid md:grid-cols-3 gap-3 text-xs font-mono">
             <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-textSecondary">
-              Precision financiera por defecto.
+              Precisión financiera por defecto.
             </div>
             <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-textSecondary">
-              Validacion estadistica antes de capital.
+              Validación estadística antes de capital.
             </div>
             <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-textSecondary">
-              Protocolo de seguridad antes de ejecucion.
+              Protocolo de seguridad antes de ejecución.
             </div>
           </div>
         </div>
@@ -243,15 +243,15 @@ const LandingPage: React.FC = () => {
                 <span className="text-accentSuccess">27/43</span> fases completadas.
               </h2>
               <p className="text-textSecondary max-w-xl">
-                El programa avanza en Safety y Observabilidad (3.4-3.5), seguido de ejecucion tactica (3.6-3.9), mando y
-                control (4.x), operaciones (4.3-4.5) y salida a produccion (5.0-6.0).
+                El programa avanza en Safety y Observabilidad (3.4-3.5), seguido de ejecución táctica (3.6-3.9), mando y
+                control (4.x), operaciones (4.3-4.5) y salida a producción (5.0-6.0).
               </p>
             </div>
             <Link
               to="/catalog"
               className="text-accentCyan hover:text-accentViolet transition-colors mt-4 md:mt-0 font-mono text-sm flex items-center"
             >
-              Ver catalogo completo <ArrowRight size={16} className="ml-2" />
+              Ver catálogo completo <ArrowRight size={16} className="ml-2" />
             </Link>
           </div>
 
@@ -260,12 +260,12 @@ const LandingPage: React.FC = () => {
             <div className="absolute top-0 left-0 h-full w-full hidden md:flex text-[10px] font-mono font-bold text-white/50 items-center justify-between px-4">
               <span>Base</span>
               <span>Safety</span>
-              <span>Operacion</span>
-              <span>Produccion</span>
+              <span>Operación</span>
+              <span>Producción</span>
             </div>
           </div>
           <p className="md:hidden text-[11px] font-mono text-textSecondary text-center -mt-8 mb-8">
-            Estado actual: Safety 3.4 -&gt; Objetivo: Produccion 6.0
+            Estado actual: Safety 3.4 -&gt; Objetivo: Producción 6.0
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
@@ -317,7 +317,7 @@ const LandingPage: React.FC = () => {
               ARQUITECTURA DE IA DISTRIBUIDA
             </motion.div>
             <h2 className="text-3xl md:text-5xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-              El Nucleo Neuronal
+              El Núcleo Neuronal
             </h2>
           </div>
 
@@ -329,7 +329,7 @@ const LandingPage: React.FC = () => {
                   <h3 className="font-bold text-white">NEXUS</h3>
                 </div>
                 <p className="text-sm text-textSecondary">
-                  Escaneo multi-activo del universo operable. Analisis de correlacion y deteccion de liquidez en tiempo real.
+                  Escaneo multi-activo del universo operable. Análisis de correlación y detección de liquidez en tiempo real.
                 </p>
               </GlassCard>
               <GlassCard hoverEffect className="border-l-4 border-l-accentViolet">
@@ -338,7 +338,7 @@ const LandingPage: React.FC = () => {
                   <h3 className="font-bold text-white">PHOENIX</h3>
                 </div>
                 <p className="text-sm text-textSecondary">
-                  Auto-calibracion de parametros. Si la estrategia falla, se apaga sola y se reconstruye.
+                  Auto-calibración de parámetros. Si la estrategia falla, se apaga sola y se reconstruye.
                 </p>
               </GlassCard>
             </div>
@@ -354,7 +354,7 @@ const LandingPage: React.FC = () => {
                   <Zap className="text-accentGold" size={20} />
                 </div>
                 <p className="text-sm text-textSecondary">
-                  Fusion de datos. Combina senales tecnicas (micro) con riesgo de mercado (macro) para la decision final.
+                  Fusión de datos. Combina señales técnicas (micro) con riesgo de mercado (macro) para la decisión final.
                 </p>
               </GlassCard>
 
@@ -371,15 +371,15 @@ const LandingPage: React.FC = () => {
           <div className="grid gap-4 mt-8 lg:hidden">
             <GlassCard className="border-l-4 border-l-accentCyan">
               <h3 className="font-bold text-white mb-1">NEXUS</h3>
-              <p className="text-sm text-textSecondary">Escaneo de universo y deteccion de liquidez.</p>
+              <p className="text-sm text-textSecondary">Escaneo de universo y detección de liquidez.</p>
             </GlassCard>
             <GlassCard className="border-l-4 border-l-accentViolet">
               <h3 className="font-bold text-white mb-1">PHOENIX</h3>
-              <p className="text-sm text-textSecondary">Auto-calibracion y regeneracion de estrategia.</p>
+              <p className="text-sm text-textSecondary">Auto-calibración y regeneración de estrategia.</p>
             </GlassCard>
             <GlassCard className="border-l-4 border-l-accentGold">
               <h3 className="font-bold text-white mb-1">SYMBIOSIS</h3>
-              <p className="text-sm text-textSecondary">Fusion de inteligencia micro + macro.</p>
+              <p className="text-sm text-textSecondary">Fusión de inteligencia micro + macro.</p>
             </GlassCard>
           </div>
         </div>
@@ -399,7 +399,7 @@ const LandingPage: React.FC = () => {
               Opera con un centro de mando institucional.
             </h2>
             <p className="text-textSecondary mb-6">
-              Comandos criticos, confirmaciones reforzadas y trazabilidad para decisiones de alta sensibilidad.
+              Comandos críticos, confirmaciones reforzadas y trazabilidad para decisiones de alta sensibilidad.
             </p>
             <div className="space-y-4 font-mono text-sm">
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
@@ -408,7 +408,7 @@ const LandingPage: React.FC = () => {
               </div>
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
                 <span className="text-accentDanger">/kill</span>
-                <span className="text-textSecondary">Boton de panico (requiere 2FA).</span>
+                <span className="text-textSecondary">Botón de pánico (requiere 2FA).</span>
               </div>
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
                 <span className="text-accentGold">/pausa</span>
@@ -428,10 +428,10 @@ const LandingPage: React.FC = () => {
               Operational Benchmark
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Por que BASTION QUANT no compite en la liga retail.
+              Por qué BASTION QUANT no compite en la liga retail.
             </h2>
             <p className="text-textSecondary max-w-3xl mx-auto">
-              Esta comparativa no habla de precio. Habla de estandares de seguridad, control operativo y trazabilidad.
+              Esta comparativa no habla de precio. Habla de estándares de seguridad, control operativo y trazabilidad.
             </p>
           </div>
 
@@ -439,7 +439,7 @@ const LandingPage: React.FC = () => {
             {[
               {
                 title: 'Riesgo',
-                subtitle: 'Proteccion por capas antes de ejecutar',
+                subtitle: 'Protección por capas antes de ejecutar',
                 note: 'Gates de seguridad activos',
                 icon: ShieldCheck,
                 tone: 'danger',
@@ -447,7 +447,7 @@ const LandingPage: React.FC = () => {
               {
                 title: 'Ejecucion',
                 subtitle: 'Disciplina operativa con reglas verificables',
-                note: 'Pipeline unico de escritura',
+                note: 'Pipeline único de escritura',
                 icon: Zap,
                 tone: 'gold',
               },
@@ -523,7 +523,7 @@ const LandingPage: React.FC = () => {
                     <span className="md:hidden text-[10px] font-mono text-textSecondary uppercase mr-2">Retail</span>
                     {row.retail ? (
                       <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentSuccess/10 text-accentSuccess border border-accentSuccess/20 text-xs font-mono">
-                        <Check size={12} /> Si
+                        <Check size={12} /> Sí
                       </div>
                     ) : (
                       <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentDanger/10 text-accentDanger border border-accentDanger/20 text-xs font-mono">
@@ -535,7 +535,7 @@ const LandingPage: React.FC = () => {
                     <span className="md:hidden text-[10px] font-mono text-textSecondary uppercase mr-2">BASTION</span>
                     {row.bastion ? (
                       <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentCyan/10 text-accentCyan border border-accentCyan/20 text-xs font-mono">
-                        <Check size={12} /> Si
+                        <Check size={12} /> Sí
                       </div>
                     ) : (
                       <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentDanger/10 text-accentDanger border border-accentDanger/20 text-xs font-mono">
@@ -550,7 +550,7 @@ const LandingPage: React.FC = () => {
 
           <div className="mt-8 rounded-xl border border-accentCyan/20 bg-accentCyan/8 px-5 py-4 text-center">
             <p className="text-base md:text-lg text-accentCyan font-display font-bold">
-              BASTION QUANT se posiciona como infraestructura privada, no como suscripcion masiva.
+              BASTION QUANT se posiciona como infraestructura privada, no como suscripción masiva.
             </p>
           </div>
         </div>
@@ -574,11 +574,11 @@ const LandingPage: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-center gap-6">
             <Link to="/catalog">
               <button className="px-10 py-5 bg-white text-bgPrimary font-bold rounded-full hover:scale-105 transition-transform">
-                Explorar el Catalogo Completo
+                Explorar el Catálogo Completo
               </button>
             </Link>
             <button className="px-10 py-5 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors cursor-not-allowed">
-              Acceso por Evaluacion
+              Acceso por Evaluación
             </button>
           </div>
 
