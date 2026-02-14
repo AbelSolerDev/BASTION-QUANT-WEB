@@ -555,6 +555,7 @@ const ForgePage: React.FC = () => {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
+
               <GlassCard className="!bg-black/35 !border-accentDanger/20">
                 <div className="text-xs font-mono text-accentDanger mb-4">SEÑALES DE DECAY</div>
                 <div className="space-y-3">
@@ -642,8 +643,75 @@ const ForgePage: React.FC = () => {
 
           {/* ── Bottom Cards ── */}
           <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-4">
-              <GlassCard className="!bg-black/30">
+            <div className="space-y-5">
+              <div className="rounded-2xl border border-white/10 bg-[#080a11]/80 backdrop-blur-md p-5 md:p-6 relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_10%_15%,rgba(249,115,22,0.18),transparent_35%),radial-gradient(circle_at_90%_85%,rgba(6,182,212,0.14),transparent_35%)]" />
+                <div className="relative z-10 mb-6">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentOrange/30 bg-accentOrange/10 text-accentOrange text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <Sparkles size={12} />
+                    Value Engine
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">FORGE convierte I+D en ventaja operativa.</h3>
+                  <p className="text-sm text-textSecondary max-w-4xl">
+                    No es un laboratorio decorativo. Es una línea industrial de estrategias: más hipótesis útiles, validación más dura
+                    y decisiones de despliegue sustentadas por evidencia reproducible.
+                  </p>
+                </div>
+                <div className="grid lg:grid-cols-12 gap-5 relative z-10">
+                  <div className="lg:col-span-7 space-y-3">
+                    <div className="rounded-xl border border-accentOrange/25 bg-accentOrange/5 p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-accentOrange font-mono text-xs uppercase tracking-wider">Discovery Throughput</p>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accentOrange/20 text-accentOrange">01</span>
+                      </div>
+                      <p className="text-white font-semibold mb-1">Descubrir alpha de forma sistemática</p>
+                      <p className="text-sm text-textSecondary">Generación continua de hipótesis, filtrado temprano y priorización cuantitativa.</p>
+                    </div>
+                    <div className="rounded-xl border border-accentGold/25 bg-accentGold/5 p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-accentGold font-mono text-xs uppercase tracking-wider">Validation Quality</p>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accentGold/20 text-accentGold">02</span>
+                      </div>
+                      <p className="text-white font-semibold mb-1">Reducir sesgo humano en validación</p>
+                      <p className="text-sm text-textSecondary">Walk-forward, Monte Carlo y stress tests como umbral mínimo de supervivencia.</p>
+                    </div>
+                    <div className="rounded-xl border border-accentCyan/25 bg-accentCyan/5 p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-accentCyan font-mono text-xs uppercase tracking-wider">Deployment Cadence</p>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accentCyan/20 text-accentCyan">03</span>
+                      </div>
+                      <p className="text-white font-semibold mb-1">Acelerar ciclo idea - validación - producción</p>
+                      <p className="text-sm text-textSecondary">Promoción Champion/Challenger con gobernanza y rollback definidos.</p>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-5">
+                    <div className="h-full rounded-xl border border-white/10 bg-black/35 p-5">
+                      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentCyan/30 bg-accentCyan/10 text-accentCyan text-[11px] font-mono uppercase tracking-wider mb-3">
+                        <Shield size={12} />
+                        Independencia Operativa
+                      </div>
+                      <h4 className="text-white font-bold mb-3">FORGE suma inteligencia. No crea dependencia.</h4>
+                      <div className="space-y-3 text-sm">
+                        <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                          <p className="text-[11px] font-mono text-textSecondary uppercase mb-1">Sin FORGE</p>
+                          <p className="text-textSecondary">QUANT puede operar con estrategias manuales y control institucional.</p>
+                        </div>
+                        <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                          <p className="text-[11px] font-mono text-textSecondary uppercase mb-1">Sin QUANT</p>
+                          <p className="text-textSecondary">FORGE puede funcionar como laboratorio de investigación aislado para descubrir y validar.</p>
+                        </div>
+                        <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                          <p className="text-[11px] font-mono text-textSecondary uppercase mb-1">Juntos</p>
+                          <p className="text-white">Cierran el ciclo completo: descubrir, vigilar, ejecutar, medir y aprender.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4 hidden">
+                <GlassCard className="!bg-black/30">
                 <h3 className="text-white font-bold mb-2">Propuesta de valor</h3>
                 <p className="text-sm text-textSecondary leading-relaxed mb-3">
                   FORGE convierte investigación cuantitativa en una capacidad industrial: más candidatos, mejor validación y
@@ -664,9 +732,10 @@ const ForgePage: React.FC = () => {
                 </p>
               </GlassCard>
             </div>
-          </section>
+            </div>
 
           {/* ── Footer Text ── */}
+          </section>
           <div className="text-center opacity-35 font-mono text-xs mb-12">
             <p>FORGE PROGRAM: ARCHITECTURE REFERENCE v0.1</p>
             <p>STATUS: DESIGN PHASE — CONSTRUCTION POST-6.0</p>
