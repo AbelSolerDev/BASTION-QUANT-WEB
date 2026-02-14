@@ -54,12 +54,9 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Typography */}
-            <div className="flex flex-col leading-none">
+            <div className="leading-none">
               <span className="font-display font-bold text-lg tracking-widest text-white group-hover:text-shadow-glow transition-all">
                 BASTION
-              </span>
-              <span className="font-mono text-[10px] text-accentCyan tracking-[0.3em] font-medium group-hover:text-white transition-colors">
-                QUANT
               </span>
             </div>
           </Link>

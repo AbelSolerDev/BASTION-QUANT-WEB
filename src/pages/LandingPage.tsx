@@ -491,6 +491,9 @@ const LandingPage: React.FC = () => {
                   <p className="text-sm text-textSecondary">
                     Aporta contexto externo y overlays preventivos, sin invadir la autoridad de ejecución de QUANT.
                   </p>
+                  <Link to="/sentinel" className="inline-flex mt-5 items-center gap-2 text-accentDanger font-mono text-xs hover:text-white transition-colors">
+                    Ver SENTINEL <ArrowRight size={14} />
+                  </Link>
                 </div>
               </motion.article>
             </div>
