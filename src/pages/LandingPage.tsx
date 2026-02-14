@@ -53,7 +53,14 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl md:text-7xl font-display font-bold leading-tight"
           >
-            Tu propio <span className="text-cyan-200 drop-shadow-[0_0_16px_rgba(34,211,238,0.65)] md:text-transparent md:bg-clip-text md:bg-gradient-to-r md:from-accentCyan md:via-white md:to-accentViolet md:animate-gradient-x md:drop-shadow-none">hedge fund</span><br />
+            Tu propio{' '}
+            <span className="md:hidden text-cyan-200 [text-shadow:0_0_16px_rgba(34,211,238,0.75)]">
+              hedge fund
+            </span>
+            <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">
+              hedge fund
+            </span>
+            <br />
             en un solo sistema.
           </motion.h1>
 
