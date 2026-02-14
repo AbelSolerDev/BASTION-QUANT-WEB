@@ -536,7 +536,7 @@ const ForgePage: React.FC = () => {
                   <h3 className="text-xl font-bold text-white mb-4">Nuevo Champion</h3>
                   <p className="text-sm text-textSecondary leading-relaxed">
                     Si supera al champion en Sharpe, drawdown y correlación,
-                    FORGE recomienda promoción. Abel aprueba. El antiguo
+                    FORGE recomienda promoción. Se valida por gobernanza. El antiguo
                     champion pasa a archive.
                   </p>
                   <div className="mt-4 flex gap-2">
@@ -628,7 +628,7 @@ const ForgePage: React.FC = () => {
               {[
                 { title: 'Solo QUANT ejecuta', desc: 'FORGE nunca envía órdenes al exchange' },
                 { title: 'Validación triple', desc: 'Walk-Forward + Monte Carlo + Stress obligatorios' },
-                { title: 'Aprobación humana', desc: 'Toda promoción requiere confirmación de Abel' },
+                { title: 'Aprobación humana', desc: 'Toda promoción requiere confirmación de gobernanza' },
                 { title: 'Inmutabilidad', desc: 'StrategyPackage firmado, nunca se modifica post-deploy' },
                 { title: 'Archive total', desc: 'Ningún experimento se borra. Todo se preserva' },
               ].map((p, i) => (
