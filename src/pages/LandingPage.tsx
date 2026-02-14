@@ -63,8 +63,8 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Motor de backtesting bidireccional, 4 estrategias cuantitativas, OMS institucional, 
-            auto-calibración PHOENIX, y 222 tests en verde. <br/>
+            Plataforma cuantitativa con validacion estadistica, control operativo por capas y 
+            trazabilidad completa de decisiones. Fase 3.4 en ejecucion con ruta definida hasta 6.0. <br/>
             <strong className="text-white">No es un bot. Es infraestructura financiera.</strong>
           </motion.p>
 
@@ -95,20 +95,20 @@ const LandingPage: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10 mt-12 bg-black/20 backdrop-blur-sm rounded-xl p-4"
           >
             <div>
-              <div className="text-3xl font-mono font-bold text-white">55</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Capacidades</div>
+              <div className="text-3xl font-mono font-bold text-white">27/43</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Fases Completadas</div>
             </div>
             <div>
-              <div className="text-3xl font-mono font-bold text-white">222</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Tests Auto</div>
+              <div className="text-3xl font-mono font-bold text-white">237</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Tests Validados</div>
             </div>
             <div>
               <div className="text-3xl font-mono font-bold text-white">33</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Tablas BD</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Tablas Auditables</div>
             </div>
             <div>
-              <div className="text-3xl font-mono font-bold text-accentSuccess">78/100</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Score Inst.</div>
+              <div className="text-3xl font-mono font-bold text-accentSuccess">78 -&gt; 90</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Score Institucional</div>
             </div>
           </motion.div>
         </div>
@@ -157,12 +157,12 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                <span className="text-accentCyan">128</span> Capacidades. <span className="text-accentSuccess">55</span> Construidas.
+             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                <span className="text-accentCyan">{features.length}</span> Capacidades documentadas. <span className="text-accentSuccess">27/43</span> fases completadas.
               </h2>
               <p className="text-textSecondary max-w-xl">
-                Actualmente en Fase 2. Cuando se complete la Fase 4, BASTION QUANT será un sistema totalmente autónomo con 
-                Inteligencia Macro (SENTINEL) y gestión de incidentes automática.
+                El programa avanza en Safety y Observabilidad (3.4-3.5), seguido de ejecucion tactica (3.6-3.9),
+                mando y control (4.x), operaciones (4.3-4.5) y salida a produccion (5.0-6.0).
               </p>
             </div>
             <Link to="/catalog" className="text-accentCyan hover:text-accentViolet transition-colors mt-4 md:mt-0 font-mono text-sm flex items-center">
@@ -172,18 +172,18 @@ const LandingPage: React.FC = () => {
           
           {/* Progress Bar Visual */}
           <div className="w-full bg-bgSecondary h-4 rounded-full mb-12 overflow-hidden relative">
-            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-accentCyan to-accentViolet w-[42%]"></div>
+            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-accentCyan to-accentViolet w-[63%]"></div>
             <div className="absolute top-0 left-0 h-full w-full flex text-[10px] font-mono font-bold text-white/50 items-center justify-between px-4">
-               <span>Cimientos</span>
-               <span>Laboratorio</span>
-               <span>Tridente</span>
-               <span>Sentinel (Próximamente)</span>
+               <span>Base</span>
+               <span>Safety</span>
+               <span>Operacion</span>
+               <span>Produccion</span>
             </div>
           </div>
 
           {/* Filter Tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
-             {['Todos', 'A-C', 'D', 'E', 'G', 'H'].map((tab) => (
+             {['Todos', 'A-C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K-L', 'M', 'N', 'O'].map((tab) => (
                <button
                  key={tab}
                  onClick={() => setFeatureTab(tab)}
@@ -247,7 +247,7 @@ const LandingPage: React.FC = () => {
                       <h3 className="font-bold text-white">NEXUS</h3>
                    </div>
                    <p className="text-sm text-textSecondary">
-                      Escaneo de universo 128 pares. Análisis de correlación y detección de liquidez en tiempo real.
+                      Escaneo multi-activo del universo operable. Analisis de correlacion y deteccion de liquidez en tiempo real.
                    </p>
                 </GlassCard>
                 <GlassCard hoverEffect className="border-l-4 border-l-accentViolet">
@@ -315,11 +315,11 @@ const LandingPage: React.FC = () => {
             <div className="inline-block px-3 py-1 rounded bg-accentViolet/10 text-accentViolet text-xs font-mono mb-4">
               MANDO Y CONTROL
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Controla tu infraestructura desde Telegram.
+                <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+              Opera con un centro de mando institucional.
             </h2>
             <p className="text-textSecondary mb-6">
-              No necesitas abrir el laptop. Gestiona tu hedge fund desde la cama.
+              Comandos criticos, confirmaciones reforzadas y trazabilidad para decisiones de alta sensibilidad.
             </p>
             <div className="space-y-4 font-mono text-sm">
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">

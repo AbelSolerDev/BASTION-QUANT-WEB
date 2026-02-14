@@ -1,36 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ShieldCheck, HeartPulse, Zap, AlertTriangle, Eye, Activity, BarChart2, RefreshCw, Thermometer, Target, Droplets, DollarSign, CloudOff, Wifi, Search, Lock, Cpu, Globe } from 'lucide-react';
+import {
+  Activity,
+  AlertTriangle,
+  ArrowLeft,
+  CloudOff,
+  Cpu,
+  DollarSign,
+  Droplets,
+  Eye,
+  Globe,
+  HeartPulse,
+  Lock,
+  RefreshCw,
+  Search,
+  ShieldCheck,
+  Target,
+  Thermometer,
+  Wifi,
+  Zap,
+} from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import { Link } from 'react-router-dom';
 
-// --- SUB-COMPONENT: INFINITE TICKER ---
 const Ticker = () => (
   <div className="w-full bg-accentDanger/10 border-y border-accentDanger/20 overflow-hidden py-2 backdrop-blur-md">
-    <motion.div 
+    <motion.div
       animate={{ x: [0, -1000] }}
-      transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+      transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
       className="whitespace-nowrap flex gap-8 text-xs font-mono text-accentDanger/80 font-bold tracking-widest"
     >
       {[...Array(10)].map((_, i) => (
         <React.Fragment key={i}>
           <span>/// THREAT DETECTION ACTIVE</span>
-          <span>:: LIQUIDATION CASCADE: 0%</span>
-          <span>:: BTC HASH: STABLE</span>
-          <span>:: WHALE ALERT: SECTOR 7</span>
-          <span>:: SENTINEL v1.0 ONLINE</span>
+          <span>:: MARKET STRESS WATCH: ACTIVE</span>
+          <span>:: POLICY OVERLAY: CONTROLLED</span>
+          <span>:: DEGRADED MODE: READY</span>
+          <span>:: SENTINEL PROGRAM: R&D TRACK</span>
         </React.Fragment>
       ))}
     </motion.div>
   </div>
 );
 
-// --- SUB-COMPONENT: THE GIANT RADAR BACKGROUND ---
 const SentinelRadar = () => (
   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[800px] md:h-[800px] pointer-events-none opacity-20 z-0">
-    <motion.div 
+    <motion.div
       animate={{ rotate: 360 }}
-      transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+      transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
       className="w-full h-full rounded-full border border-accentCyan/30 border-dashed relative"
     >
       <div className="absolute inset-4 rounded-full border border-accentDanger/20" />
@@ -44,202 +61,331 @@ const SentinelRadar = () => (
 
 const SentinelPage: React.FC = () => {
   const qualities = [
-    { id: "01", icon: HeartPulse, title: "Motor Cardíaco 1Hz", desc: "No parpadea. Procesa el mercado cada 1000ms. Si BTC estornuda, SENTINEL cierra las compuertas antes de que llegue la infección." },
-    { id: "02", icon: Zap, title: "WebSocket Omnicanal", desc: "Inyección directa de datos. 15+ pares simultáneos. No es polling, es streaming de alta presión." },
-    { id: "03", icon: AlertTriangle, title: "DEFCON Dinámico", desc: "Semáforo de riesgo (0-100). Calcula la probabilidad de ruina en tiempo real y obliga a QUANT a obedecer." },
-    { id: "04", icon: Activity, title: "Flash Crash Veto", desc: "Caída > X% en 3min = KILL SWITCH AUTOMÁTICO. Protege el capital mientras los bots retail son liquidados." },
-    { id: "05", icon: Droplets, title: "Anti-Sangrado", desc: "Detecta la muerte lenta. Si el portfolio gotea pips constantemente, SENTINEL corta la hemorragia reduciendo el sizing." },
-    { id: "06", icon: Globe, title: "Visión Global (Total2/3)", desc: "¿Es solo BTC o es todo el mercado? Analiza índices sintéticos para distinguir pánico real de ruido aislado." },
-    { id: "07", icon: RefreshCw, title: "Detector de Rotación", desc: "Si BTC cae pero ALTS suben, no es venta, es rotación. SENTINEL ordena rebalanceo, no cierre." },
-    { id: "08", icon: DollarSign, title: "Stablecoin Dominance", desc: "El índice del miedo. Si USDT domina, SENTINEL huele el pánico antes de que se refleje en el precio." },
-    { id: "09", icon: Target, title: "Liquidation Hunter", desc: "¿$10M liquidados en 1 minuto? Bandera Roja. SENTINEL prohíbe abrir longs en medio de una cascada." },
-    { id: "10", icon: Thermometer, title: "Funding Rate Heat", desc: "Detecta euforia insostenible. Si el funding arde, SENTINEL prepara la salida antes del desplome." },
-    { id: "11", icon: Eye, title: "Precognición (News)", desc: "Se adelanta a la volatilidad programada (FOMC, CPI). Aprieta los stops un 40% antes de que hable Powell." },
-    { id: "12", icon: ShieldCheck, title: "Simbiosis Neural", desc: "No es un módulo aparte. Es el sistema nervioso que conecta con el cerebro de QUANT." }
+    {
+      id: '01',
+      icon: HeartPulse,
+      title: 'Vector de estado 1Hz',
+      desc: 'Lectura continua del mercado con nivel de riesgo, confianza y vigencia temporal.',
+    },
+    {
+      id: '02',
+      icon: ShieldCheck,
+      title: 'Contrato de autoridad',
+      desc: 'SENTINEL emite contexto y recomendaciones. QUANT conserva ejecucion y control operativo.',
+    },
+    {
+      id: '03',
+      icon: Globe,
+      title: 'Contexto macro multi-senal',
+      desc: 'Integra volatilidad, liquidaciones, funding, stablecoins e indices sinteticos.',
+    },
+    {
+      id: '04',
+      icon: Activity,
+      title: 'Score compuesto',
+      desc: 'Fusiona inteligencia micro y macro para modular exposicion con disciplina.',
+    },
+    {
+      id: '05',
+      icon: RefreshCw,
+      title: 'Degradacion gracil',
+      desc: 'Si la conexion cae, QUANT no se detiene: reduce peso macro y mantiene continuidad.',
+    },
+    {
+      id: '06',
+      icon: AlertTriangle,
+      title: 'Jerarquia de decisiones',
+      desc: 'Una policy table resuelve conflictos y garantiza una unica accion operativa.',
+    },
+    {
+      id: '07',
+      icon: Wifi,
+      title: 'Canal dual',
+      desc: 'Sincronizacion periodica con refuerzo de eventos criticos para menor latencia de reaccion.',
+    },
+    {
+      id: '08',
+      icon: Search,
+      title: 'Evidencia y freshness',
+      desc: 'Cada estado incluye evidencia, calidad de datos y ventana de validez temporal.',
+    },
+    {
+      id: '09',
+      icon: Lock,
+      title: 'Separacion de roles',
+      desc: 'SENTINEL no ejecuta ordenes ni activa cierres. Es inteligencia de contexto, no motor de ejecucion.',
+    },
+    {
+      id: '10',
+      icon: Eye,
+      title: 'Modo anticipatorio',
+      desc: 'Diseno definido para post-6.0: acciones preventivas con TTL y reversion controlada.',
+    },
+    {
+      id: '11',
+      icon: Zap,
+      title: 'Convivencia con Safety',
+      desc: 'SENTINEL modula decisiones. Los bloqueos de seguridad los gobiernan Kill Switch y Safe-to-Trade.',
+    },
+    {
+      id: '12',
+      icon: Cpu,
+      title: 'Roadmap separado',
+      desc: 'El microservicio real de SENTINEL se construye despues de consolidar QUANT en produccion.',
+    },
   ];
 
   return (
     <div className="bg-bgPrimary min-h-screen relative overflow-hidden font-sans">
       <SentinelRadar />
 
-      {/* FIXED HUD ELEMENTS */}
       <div className="fixed top-24 right-4 z-40 hidden lg:block">
-         <div className="flex flex-col gap-2 items-end">
-            <div className="text-[10px] font-mono text-accentDanger animate-pulse">SYSTEM MONITORING</div>
-            <div className="h-32 w-1 bg-white/10 rounded-full overflow-hidden relative">
-               <motion.div 
-                 animate={{ height: ["20%", "60%", "30%", "80%", "40%"] }}
-                 transition={{ duration: 2, repeat: Infinity }}
-                 className="absolute bottom-0 w-full bg-gradient-to-t from-accentCyan to-accentDanger"
-               />
-            </div>
-         </div>
+        <div className="flex flex-col gap-2 items-end">
+          <div className="text-[10px] font-mono text-accentDanger animate-pulse">SYSTEM MONITORING</div>
+          <div className="h-32 w-1 bg-white/10 rounded-full overflow-hidden relative">
+            <motion.div
+              animate={{ height: ['20%', '60%', '30%', '80%', '40%'] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute bottom-0 w-full bg-gradient-to-t from-accentCyan to-accentDanger"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="pt-24 pb-20 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <Link to="/" className="inline-flex items-center text-white/50 hover:text-white transition-colors mb-8 font-mono text-xs uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/5">
+          <Link
+            to="/"
+            className="inline-flex items-center text-white/50 hover:text-white transition-colors mb-8 font-mono text-xs uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/5"
+          >
             <ArrowLeft size={14} className="mr-2" />
             Retorno a Base
           </Link>
 
-          {/* HERO SECTION - DISRUPTIVE */}
           <div className="mb-24 relative">
-             <motion.div 
-               initial={{ opacity: 0, x: -50 }}
-               animate={{ opacity: 1, x: 0 }}
-               className="border-l-2 border-accentDanger pl-6 ml-2 md:ml-0"
-             >
-                <h1 className="text-6xl md:text-9xl font-display font-bold leading-[0.85] tracking-tighter mb-4 text-white">
-                  SENTINEL
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="border-l-2 border-accentDanger pl-6 ml-2 md:ml-0"
+            >
+              <h1 className="text-6xl md:text-9xl font-display font-bold leading-[0.85] tracking-tighter mb-4 text-white">
+                SENTINEL
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentDanger via-accentViolet to-white opacity-80">
+                  OVERWATCH
+                </span>
+              </h1>
+            </motion.div>
+
+            <div className="flex flex-col md:flex-row gap-8 mt-12 items-start">
+              <div className="max-w-xl">
+                <p className="text-xl md:text-2xl text-textPrimary font-light leading-relaxed">
+                  Inteligencia macro para proteger decisiones de trading.
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentDanger via-accentViolet to-white opacity-80">
-                    OVERWATCH
+                  <span className="text-accentCyan font-bold bg-accentCyan/10 px-1">
+                    Contexto, evidencia y control de exposicion.
                   </span>
-                </h1>
-             </motion.div>
-             
-             <div className="flex flex-col md:flex-row gap-8 mt-12 items-start">
-                <div className="max-w-xl">
-                   <p className="text-xl md:text-2xl text-textPrimary font-light leading-relaxed">
-                     La IA no solo debe saber cómo ganar. <br/>
-                     <span className="text-accentCyan font-bold bg-accentCyan/10 px-1">Debe saber cuándo huir.</span>
-                   </p>
-                   <p className="text-textSecondary mt-6 text-sm font-mono border-t border-white/10 pt-4">
-                     // MICRO-ESTRUCTURA + MACRO-ANÁLISIS = SUPERVIVENCIA
-                   </p>
+                </p>
+                <p className="text-textSecondary mt-6 text-sm font-mono border-t border-white/10 pt-4">
+                  // SENTINEL EMITE CONTEXTO. QUANT EJECUTA.
+                </p>
+              </div>
+
+              <div className="hidden md:block flex-1 h-32 rounded-lg border border-white/10 relative overflow-hidden bg-black/40">
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="font-mono text-xs text-accentDanger tracking-[0.4em] font-bold opacity-80 animate-pulse">
+                    ARCHITECTURE MODE
+                  </p>
                 </div>
-                
-                {/* Visual Glitch decoration - FIXED VISIBILITY */}
-                <div className="hidden md:block flex-1 h-32 rounded-lg border border-white/10 relative overflow-hidden bg-black/40">
-                   {/* Background Noise Layer */}
-                   <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
-                   
-                   {/* Text Layer - Isolated from opacity */}
-                   <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="font-mono text-xs text-accentDanger tracking-[0.5em] font-bold opacity-80 animate-pulse">
-                         NO SIGNAL DETECTED
-                      </p>
-                   </div>
-                </div>
-             </div>
+              </div>
+            </div>
+
+            <div className="mt-8 max-w-4xl border border-accentCyan/25 bg-accentCyan/5 rounded-xl px-5 py-4">
+              <p className="text-xs md:text-sm text-textSecondary font-mono">
+                ESTADO REAL: SENTINEL ESTA INTEGRADO EN QUANT COMO CAPA MOCK Y DE MODULACION.
+                <span className="text-white">
+                  {' '}
+                  El microservicio independiente se activa post-6.0, tras estabilizar el core OMS/EMS en produccion.
+                </span>
+              </p>
+            </div>
           </div>
 
           <Ticker />
 
-          {/* GRID DE MÓDULOS - TACTICAL DESIGN */}
-          <div className="mt-24 mb-24">
-             <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-mono text-white flex items-center gap-2">
-                   <Cpu className="text-accentDanger" /> MÓDULOS DE VIGILANCIA
-                </h2>
-                <span className="text-xs font-mono text-accentDanger animate-pulse">● LIVE FEED</span>
-             </div>
-
-             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {qualities.map((q, i) => (
-                   <GlassCard key={i} className="group !bg-black/40 !border-white/5 hover:!border-accentCyan/30 transition-all duration-300 relative overflow-hidden">
-                      {/* Decorative corner */}
-                      <div className="absolute top-0 right-0 w-8 h-8 bg-white/5 -mr-4 -mt-4 rotate-45 group-hover:bg-accentCyan/20 transition-colors" />
-                      
-                      <div className="flex justify-between items-start mb-4">
-                         {/* UPDATE: GLOWING NUMBER EFFECT */}
-                         <div className="text-5xl font-display font-bold text-white/5 group-hover:text-accentCyan group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)] transition-all duration-300 select-none transform group-hover:scale-110 origin-left">
-                            {q.id}
-                         </div>
-                         <q.icon size={20} className="text-textSecondary group-hover:text-accentCyan transition-colors" />
-                      </div>
-                      
-                      <h3 className="text-white font-bold mb-2 font-mono uppercase text-sm group-hover:text-accentCyan transition-colors">
-                         {q.title}
-                      </h3>
-                      <p className="text-xs text-textSecondary leading-relaxed border-t border-white/5 pt-2">
-                         {q.desc}
-                      </p>
-                   </GlassCard>
-                ))}
-             </div>
-          </div>
-
-          {/* DEGRADATION PROTOCOL - SCI-FI HUD LOOK */}
-          <section className="mb-32 relative">
-             <div className="absolute -inset-4 bg-gradient-to-r from-accentDanger/5 to-transparent blur-xl -z-10" />
-             
-             <div className="border border-white/10 bg-[#050505] rounded-2xl overflow-hidden relative">
-                {/* Header visual */}
-                <div className="bg-white/5 p-4 border-b border-white/10 flex justify-between items-center">
-                   <div className="flex gap-2 items-center">
-                      <Lock size={16} className="text-accentDanger" />
-                      <span className="font-mono text-sm font-bold text-white tracking-wider">PROTOCOLOS DE DEGRADACIÓN</span>
-                   </div>
-                   <div className="flex gap-1">
-                      <div className="w-2 h-2 rounded-full bg-white/20" />
-                      <div className="w-2 h-2 rounded-full bg-white/20" />
-                      <div className="w-2 h-2 rounded-full bg-accentDanger" />
-                   </div>
-                </div>
-
-                <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-                   {/* LEVEL 1 */}
-                   <div className="p-8 relative group hover:bg-white/5 transition-colors">
-                      <div className="absolute top-4 right-4 opacity-50"><Wifi size={20} className="text-accentSuccess"/></div>
-                      <div className="text-xs font-mono text-accentSuccess mb-2">ESTADO: ÓPTIMO</div>
-                      <h3 className="text-2xl font-bold text-white mb-4">ONLINE</h3>
-                      <ul className="space-y-2 text-sm text-textSecondary">
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Latencia</span> <span className="text-white">12ms</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Data Loss</span> <span className="text-white">0%</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Sizing</span> <span className="text-accentSuccess font-bold">100%</span></li>
-                      </ul>
-                      <div className="mt-4 text-xs text-textSecondary bg-accentSuccess/5 p-2 rounded border border-accentSuccess/10">
-                         Sentinel y Quant en perfecta sincronía.
-                      </div>
-                   </div>
-
-                   {/* LEVEL 2 */}
-                   <div className="p-8 relative group hover:bg-white/5 transition-colors">
-                      <div className="absolute top-4 right-4 opacity-50"><Activity size={20} className="text-accentGold"/></div>
-                      <div className="text-xs font-mono text-accentGold mb-2">ESTADO: COMPROMETIDO</div>
-                      <h3 className="text-2xl font-bold text-white mb-4">DEGRADADO</h3>
-                      <ul className="space-y-2 text-sm text-textSecondary">
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Latencia</span> <span className="text-accentGold">&gt;200ms</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>WebSockets</span> <span className="text-white">Intermitente</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Sizing</span> <span className="text-accentGold font-bold">80%</span></li>
-                      </ul>
-                      <div className="mt-4 text-xs text-textSecondary bg-accentGold/5 p-2 rounded border border-accentGold/10">
-                         Usa caché local. Reduce riesgo preventivamente.
-                      </div>
-                   </div>
-
-                   {/* LEVEL 3 */}
-                   <div className="p-8 relative group hover:bg-white/5 transition-colors">
-                      <div className="absolute top-4 right-4 opacity-50"><CloudOff size={20} className="text-accentDanger"/></div>
-                      <div className="text-xs font-mono text-accentDanger mb-2">ESTADO: CRÍTICO</div>
-                      <h3 className="text-2xl font-bold text-white mb-4">OFFLINE</h3>
-                      <ul className="space-y-2 text-sm text-textSecondary">
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Latencia</span> <span className="text-accentDanger">TIMEOUT</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Heartbeat</span> <span className="text-accentDanger">FAILED</span></li>
-                         <li className="flex justify-between border-b border-white/5 pb-1"><span>Sizing</span> <span className="text-accentDanger font-bold">60%</span></li>
-                      </ul>
-                      <div className="mt-4 text-xs text-textSecondary bg-accentDanger/5 p-2 rounded border border-accentDanger/10">
-                         Aislamiento total. Quant opera "a ciegas" con lógica conservadora.
-                      </div>
-                   </div>
-                </div>
-                
-                <div className="bg-accentDanger/10 p-3 text-center border-t border-accentDanger/20">
-                   <p className="text-xs font-mono text-accentDanger font-bold animate-pulse">
-                      ¡ADVERTENCIA! PROTOCOLO DE AISLAMIENTO NO ANULABLE MANUALMENTE
-                   </p>
-                </div>
-             </div>
+          <section className="mt-12 mb-20">
+            <div className="grid md:grid-cols-3 gap-4">
+              <GlassCard className="!bg-black/35 !border-accentCyan/20">
+                <div className="text-xs font-mono text-accentCyan mb-2">ESTADO REAL</div>
+                <h3 className="text-white font-bold mb-2">Integracion operativa activa</h3>
+                <p className="text-xs text-textSecondary leading-relaxed">
+                  MockSentinel, score compuesto, degradacion gracil y capa visual ya operan dentro de QUANT.
+                </p>
+              </GlassCard>
+              <GlassCard className="!bg-black/35 !border-accentGold/20">
+                <div className="text-xs font-mono text-accentGold mb-2">CONTRATO</div>
+                <h3 className="text-white font-bold mb-2">Emitir no es ejecutar</h3>
+                <p className="text-xs text-textSecondary leading-relaxed">
+                  SENTINEL informa y recomienda. La ejecucion, los cierres y la seguridad final pertenecen a QUANT.
+                </p>
+              </GlassCard>
+              <GlassCard className="!bg-black/35 !border-accentViolet/20">
+                <div className="text-xs font-mono text-accentViolet mb-2">PROYECCION</div>
+                <h3 className="text-white font-bold mb-2">Microservicio post-6.0</h3>
+                <p className="text-xs text-textSecondary leading-relaxed">
+                  La version independiente se construye despues de completar paper, canary y salida estable.
+                </p>
+              </GlassCard>
+            </div>
           </section>
 
-          {/* FOOTER NOTE - CRYPTIC */}
-          <div className="text-center opacity-30 font-mono text-xs mb-12">
-             <p>SYSTEM ID: SENTINEL-X-99</p>
-             <p>ENCRYPTION: QUANTUM-RESISTANT</p>
+          <div className="mt-24 mb-24">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-mono text-white flex items-center gap-2">
+                <Cpu className="text-accentDanger" /> MODULOS DE VIGILANCIA
+              </h2>
+              <span className="text-xs font-mono text-accentDanger animate-pulse">ROADMAP CONTROLLED</span>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {qualities.map((q, i) => (
+                <GlassCard
+                  key={i}
+                  className="group !bg-black/40 !border-white/5 hover:!border-accentCyan/30 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-8 h-8 bg-white/5 -mr-4 -mt-4 rotate-45 group-hover:bg-accentCyan/20 transition-colors" />
+
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="text-5xl font-display font-bold text-white/5 group-hover:text-accentCyan group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)] transition-all duration-300 select-none transform group-hover:scale-110 origin-left">
+                      {q.id}
+                    </div>
+                    <q.icon size={20} className="text-textSecondary group-hover:text-accentCyan transition-colors" />
+                  </div>
+
+                  <h3 className="text-white font-bold mb-2 font-mono uppercase text-sm group-hover:text-accentCyan transition-colors">
+                    {q.title}
+                  </h3>
+                  <p className="text-xs text-textSecondary leading-relaxed border-t border-white/5 pt-2">{q.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
           </div>
 
+          <section className="mb-32 relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-accentDanger/5 to-transparent blur-xl -z-10" />
+
+            <div className="border border-white/10 bg-[#050505] rounded-2xl overflow-hidden relative">
+              <div className="bg-white/5 p-4 border-b border-white/10 flex justify-between items-center">
+                <div className="flex gap-2 items-center">
+                  <Lock size={16} className="text-accentDanger" />
+                  <span className="font-mono text-sm font-bold text-white tracking-wider">DEGRADACION OPERATIVA</span>
+                </div>
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
+                  <div className="w-2 h-2 rounded-full bg-accentDanger" />
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+                <div className="p-8 relative group hover:bg-white/5 transition-colors">
+                  <div className="absolute top-4 right-4 opacity-50">
+                    <Wifi size={20} className="text-accentSuccess" />
+                  </div>
+                  <div className="text-xs font-mono text-accentSuccess mb-2">ESTADO: OPTIMO</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">ONLINE</h3>
+                  <ul className="space-y-2 text-sm text-textSecondary">
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Latencia</span> <span className="text-white">12ms</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Data Loss</span> <span className="text-white">0%</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Peso SENTINEL</span> <span className="text-accentSuccess font-bold">1.0</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 text-xs text-textSecondary bg-accentSuccess/5 p-2 rounded border border-accentSuccess/10">
+                    Sinapsis completa con decisiones compuestas de maxima calidad.
+                  </div>
+                </div>
+
+                <div className="p-8 relative group hover:bg-white/5 transition-colors">
+                  <div className="absolute top-4 right-4 opacity-50">
+                    <Activity size={20} className="text-accentGold" />
+                  </div>
+                  <div className="text-xs font-mono text-accentGold mb-2">ESTADO: COMPROMETIDO</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">DEGRADADO</h3>
+                  <ul className="space-y-2 text-sm text-textSecondary">
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Latencia</span> <span className="text-accentGold">&gt;200ms</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Cobertura</span> <span className="text-white">Parcial</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Peso SENTINEL</span> <span className="text-accentGold font-bold">0.5</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 text-xs text-textSecondary bg-accentGold/5 p-2 rounded border border-accentGold/10">
+                    Continuidad operativa con enfoque mas conservador y menor influencia macro.
+                  </div>
+                </div>
+
+                <div className="p-8 relative group hover:bg-white/5 transition-colors">
+                  <div className="absolute top-4 right-4 opacity-50">
+                    <CloudOff size={20} className="text-accentDanger" />
+                  </div>
+                  <div className="text-xs font-mono text-accentDanger mb-2">ESTADO: CRITICO</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">OFFLINE</h3>
+                  <ul className="space-y-2 text-sm text-textSecondary">
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Latencia</span> <span className="text-accentDanger">TIMEOUT</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Heartbeat</span> <span className="text-accentDanger">FAILED</span>
+                    </li>
+                    <li className="flex justify-between border-b border-white/5 pb-1">
+                      <span>Peso SENTINEL</span> <span className="text-accentDanger font-bold">0.0</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 text-xs text-textSecondary bg-accentDanger/5 p-2 rounded border border-accentDanger/10">
+                    QUANT mantiene autonomia. Politica configurable: continuidad plena o reduccion preventiva.
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-accentDanger/10 p-3 text-center border-t border-accentDanger/20">
+                <p className="text-xs font-mono text-accentDanger font-bold animate-pulse">
+                  SENTINEL NUNCA EJECUTA ORDENES NI ACTIVA KILL SWITCH. SOLO INFORMA Y MODULA.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-4">
+              <GlassCard className="!bg-black/30">
+                <h3 className="text-white font-bold mb-2">Modo anticipatorio (post-6.0)</h3>
+                <p className="text-sm text-textSecondary leading-relaxed">
+                  Diseno orientado a reducir exposicion antes de eventos macro con overlays de tiempo limitado y reversion
+                  controlada.
+                </p>
+              </GlassCard>
+              <GlassCard className="!bg-black/30">
+                <h3 className="text-white font-bold mb-2">Principio de independencia</h3>
+                <p className="text-sm text-textSecondary leading-relaxed">
+                  QUANT puede operar sin SENTINEL en modo autonomo. SENTINEL amplifica calidad de decision, no sustituye el core.
+                </p>
+              </GlassCard>
+            </div>
+          </section>
+
+          <div className="text-center opacity-35 font-mono text-xs mb-12">
+            <p>SENTINEL PROGRAM: ARCHITECTURE REFERENCE ALIGNED</p>
+            <p>STATUS: INTEGRATED MOCK + POST-6.0 INDEPENDENT SERVICE</p>
+          </div>
         </div>
       </div>
     </div>
