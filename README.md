@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# BASTION QUANT - Web Surface
 
-# Run and deploy your AI Studio app
+Repositorio publico de la capa web de presentacion.
 
-This contains everything you need to run your app locally.
+## Alcance
+- Este repositorio contiene solo frontend estatico/informativo.
+- No incluye logica operativa, motor de ejecucion, ni componentes de infraestructura critica.
+- No contiene credenciales, claves, datos sensibles ni configuracion de entornos productivos.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1QEoV4goZ_rLOlks6qvKDPEFV9snfhvi3
+## Nota de seguridad
+- El contenido publicado aqui no representa el perimetro tecnico completo del proyecto.
+- No usar este repositorio como referencia de arquitectura interna, operativa o controles reales.
 
-## Run Locally
+## Uso local
+Prerequisito: Node.js.
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+npm run build
+```
 
+## Publicacion
+```bash
+npm run deploy
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Politica
+Se prioriza discrecion operativa. Parte de la informacion tecnica se mantiene deliberadamente fuera de este repositorio.
