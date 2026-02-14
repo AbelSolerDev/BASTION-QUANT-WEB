@@ -6,8 +6,6 @@ import {
   ArrowLeft,
   CloudOff,
   Cpu,
-  DollarSign,
-  Droplets,
   Eye,
   Globe,
   HeartPulse,
@@ -15,7 +13,6 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
-  Target,
   Thermometer,
   Wifi,
   Zap,
@@ -231,7 +228,7 @@ const SentinelPage: React.FC = () => {
                 </p>
               </GlassCard>
               <GlassCard className="!bg-black/35 !border-accentViolet/20">
-                <div className="text-xs font-mono text-accentViolet mb-2">PROYECCION</div>
+                <div className="text-xs font-mono text-accentViolet mb-2">PROYECCIÓN</div>
                 <h3 className="text-white font-bold mb-2">Microservicio post-6.0</h3>
                 <p className="text-xs text-textSecondary leading-relaxed">
                   La versión independiente se construye después de completar paper, canary y salida estable.
@@ -249,9 +246,9 @@ const SentinelPage: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {qualities.map((q, i) => (
+              {qualities.map((q) => (
                 <GlassCard
-                  key={i}
+                  key={q.id}
                   className="group !bg-black/40 !border-white/5 hover:!border-accentCyan/30 transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-8 h-8 bg-white/5 -mr-4 -mt-4 rotate-45 group-hover:bg-accentCyan/20 transition-colors" />
@@ -279,7 +276,7 @@ const SentinelPage: React.FC = () => {
               <div className="bg-white/5 p-4 border-b border-white/10 flex justify-between items-center">
                 <div className="flex gap-2 items-center">
                   <Lock size={16} className="text-accentDanger" />
-                  <span className="font-mono text-sm font-bold text-white tracking-wider">DEGRADACION OPERATIVA</span>
+                  <span className="font-mono text-sm font-bold text-white tracking-wider">DEGRADACIÓN OPERATIVA</span>
                 </div>
                 <div className="flex gap-1">
                   <div className="w-2 h-2 rounded-full bg-white/20" />
@@ -365,20 +362,67 @@ const SentinelPage: React.FC = () => {
           </section>
 
           <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-4">
-              <GlassCard className="!bg-black/30">
-                <h3 className="text-white font-bold mb-2">Modo anticipatorio (post-6.0)</h3>
-                <p className="text-sm text-textSecondary leading-relaxed">
-                  Diseño orientado a reducir exposición antes de eventos macro con overlays de tiempo limitado y reversión
-                  controlada.
-                </p>
-              </GlassCard>
-              <GlassCard className="!bg-black/30">
-                <h3 className="text-white font-bold mb-2">Principio de independencia</h3>
-                <p className="text-sm text-textSecondary leading-relaxed">
-                  QUANT puede operar sin SENTINEL en modo autónomo. SENTINEL amplifica calidad de decisión, no sustituye el core.
-                </p>
-              </GlassCard>
+            <div className="rounded-2xl border border-white/10 bg-black/25 backdrop-blur-sm p-5 md:p-6">
+              <div className="mb-5 flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[11px] font-mono text-accentDanger uppercase tracking-wider">Doctrina Operativa</p>
+                  <h3 className="text-xl md:text-2xl font-display font-bold text-white">Cómo convivirán QUANT y SENTINEL</h3>
+                </div>
+                <div className="hidden md:flex items-center gap-2 text-[10px] font-mono text-textSecondary">
+                  <span className="px-2 py-1 rounded border border-white/10 bg-white/5">Post-6.0</span>
+                  <span className="px-2 py-1 rounded border border-white/10 bg-white/5">Safety First</span>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <GlassCard className="!bg-[#0b1324]/75 !border-accentDanger/25 !p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Thermometer size={16} className="text-accentDanger" />
+                    <h4 className="text-white font-bold">Modo anticipatorio (post-6.0)</h4>
+                  </div>
+                  <p className="text-sm text-textSecondary leading-relaxed">
+                    Diseño orientado a reducir exposición antes de eventos macro, con overlays temporales y reversión automática.
+                  </p>
+                  <div className="mt-4 space-y-2 text-xs">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <span className="text-textSecondary">Disparo</span>
+                      <span className="text-accentDanger font-mono">Umbral macro + confianza</span>
+                    </div>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <span className="text-textSecondary">Duración</span>
+                      <span className="text-white font-mono">TTL limitado</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-textSecondary">Salida</span>
+                      <span className="text-accentCyan font-mono">Reversión controlada</span>
+                    </div>
+                  </div>
+                </GlassCard>
+
+                <GlassCard className="!bg-[#0b1324]/75 !border-accentCyan/25 !p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <ShieldCheck size={16} className="text-accentCyan" />
+                    <h4 className="text-white font-bold">Principio de independencia</h4>
+                  </div>
+                  <p className="text-sm text-textSecondary leading-relaxed">
+                    QUANT puede operar sin SENTINEL en modo autónomo. SENTINEL mejora la calidad de decisión, pero no sustituye el core.
+                  </p>
+                  <div className="mt-4 space-y-2 text-xs">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <span className="text-textSecondary">Autoridad final</span>
+                      <span className="text-white font-mono">QUANT</span>
+                    </div>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <span className="text-textSecondary">Rol SENTINEL</span>
+                      <span className="text-accentDanger font-mono">Contexto y recomendación</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-textSecondary">Fallback</span>
+                      <span className="text-accentSuccess font-mono">Continuidad operativa</span>
+                    </div>
+                  </div>
+                </GlassCard>
+              </div>
             </div>
           </section>
 
