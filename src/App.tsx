@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import BastionChatbot from './components/BastionChatbot';
 import LandingPage from './pages/LandingPage';
 import CatalogPage from './pages/CatalogPage';
 import SentinelPage from './pages/SentinelPage';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Route path="/forge" element={<ForgePage />} />
         </Routes>
         <Footer />
+        <BastionChatbot />
       </div>
     </Router>
   );
