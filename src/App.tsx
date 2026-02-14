@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import BastionChatbot from './components/BastionChatbot';
 import LandingPage from './pages/LandingPage';
@@ -7,6 +7,16 @@ import CatalogPage from './pages/CatalogPage';
 import SentinelPage from './pages/SentinelPage';
 import ForgePage from './pages/ForgePage';
 import ScanlineOverlay from './components/ui/ScanlineOverlay';
+
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+};
 
 const Footer: React.FC = () => (
   <footer className="bg-bgPrimary border-t border-white/5 py-12 px-4 text-center relative z-50">
@@ -22,6 +32,7 @@ const Footer: React.FC = () => (
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-bgPrimary min-h-screen text-textPrimary font-sans selection:bg-accentCyan selection:text-white relative">
         <ScanlineOverlay />
         <Navbar />
