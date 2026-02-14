@@ -4,6 +4,7 @@ import {
   ArrowRight,
   ShieldOff,
   EyeOff,
+  Eye,
   Calculator,
   Check,
   X,
@@ -317,8 +318,11 @@ const LandingPage: React.FC = () => {
               ARQUITECTURA DE IA DISTRIBUIDA
             </motion.div>
             <h2 className="text-3xl md:text-5xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-              El Núcleo Neuronal
+              Motor Neuronal de QUANT
             </h2>
+            <p className="text-xs md:text-sm font-mono text-textSecondary mt-3">
+              Inteligencia de ejecución operativa. El cerebro estratégico vive en FORGE.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 items-center">
@@ -385,7 +389,116 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 5: COMMAND & CONTROL */}
+      {/* SECTION 5: BASTION TRINITY */}
+      <section className="py-24 px-4 bg-[#060a12] relative overflow-hidden border-y border-white/5">
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_15%_20%,rgba(249,115,22,0.18),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(6,182,212,0.16),transparent_38%),radial-gradient(circle_at_80%_85%,rgba(239,68,68,0.15),transparent_35%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.035)_40%,transparent_70%)]" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5 text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-4">
+              Arquitectura BASTION
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Tres inteligencias. Un solo bastión.</h2>
+            <p className="text-textSecondary max-w-3xl mx-auto">
+              FORGE piensa la estrategia, QUANT ejecuta con disciplina y SENTINEL vigila el entorno macro. Así se evita
+              confundir investigación con ejecución.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-5 items-stretch">
+            <motion.article
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="lg:col-span-5 rounded-2xl border border-accentOrange/35 bg-[#1a0f08]/70 backdrop-blur-md p-6 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.25),transparent_50%)]" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentOrange/35 bg-accentOrange/15 text-accentOrange text-[11px] font-mono uppercase tracking-wider">
+                    <Cpu size={12} />
+                    FORGE
+                  </div>
+                  <span className="text-white/20 font-display text-2xl">Cerebro Estratégico</span>
+                </div>
+                <p className="text-white font-semibold mb-4">Descubre, valida y evoluciona estrategias antes de tocar capital real.</p>
+                <div className="space-y-2 text-sm">
+                  <p className="text-textSecondary border-b border-white/10 pb-2">Prospector de hipótesis y filtros multi-capa.</p>
+                  <p className="text-textSecondary border-b border-white/10 pb-2">Champion/Challenger con detección de decay.</p>
+                  <p className="text-textSecondary">Entrega paquetes listos para despliegue en QUANT.</p>
+                </div>
+                <Link to="/forge" className="inline-flex mt-5 items-center gap-2 text-accentOrange font-mono text-xs hover:text-white transition-colors">
+                  Ver FORGE <ArrowRight size={14} />
+                </Link>
+              </div>
+            </motion.article>
+
+            <div className="hidden lg:flex lg:col-span-2 items-center justify-center">
+              <div className="h-full min-h-[280px] w-full flex flex-col items-center justify-center gap-3">
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+                <div className="px-3 py-1 rounded-full border border-white/15 bg-white/5 text-[10px] font-mono text-textSecondary uppercase tracking-wider">
+                  Diseña
+                </div>
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+                <div className="px-3 py-1 rounded-full border border-white/15 bg-white/5 text-[10px] font-mono text-textSecondary uppercase tracking-wider">
+                  Ejecuta
+                </div>
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+                <div className="px-3 py-1 rounded-full border border-white/15 bg-white/5 text-[10px] font-mono text-textSecondary uppercase tracking-wider">
+                  Protege
+                </div>
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 grid gap-5">
+              <motion.article
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.05 }}
+                className="rounded-2xl border border-accentCyan/35 bg-[#081524]/70 backdrop-blur-md p-6 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.22),transparent_50%)]" />
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentCyan/35 bg-accentCyan/15 text-accentCyan text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <Network size={12} />
+                    QUANT
+                  </div>
+                  <p className="text-white font-semibold mb-2">Núcleo operativo de ejecución.</p>
+                  <p className="text-sm text-textSecondary">
+                    Decide entradas y salidas con reglas verificables, control de riesgo y trazabilidad total.
+                  </p>
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.1 }}
+                className="rounded-2xl border border-accentDanger/35 bg-[#1a0b12]/70 backdrop-blur-md p-6 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.22),transparent_50%)]" />
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentDanger/35 bg-accentDanger/15 text-accentDanger text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <Eye size={12} />
+                    SENTINEL
+                  </div>
+                  <p className="text-white font-semibold mb-2">Overwatch macro y modulación de riesgo.</p>
+                  <p className="text-sm text-textSecondary">
+                    Aporta contexto externo y overlays preventivos, sin invadir la autoridad de ejecución de QUANT.
+                  </p>
+                </div>
+              </motion.article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: COMMAND & CONTROL */}
       <section className="py-24 px-4 bg-bgPrimary">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 flex justify-center">
@@ -419,7 +532,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 6: COMPARISON */}
+      {/* SECTION 7: COMPARISON */}
       <section className="py-28 px-4 bg-[#0b1222] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_10%,rgba(239,68,68,0.12),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(6,182,212,0.14),transparent_45%)]" />
         <div className="max-w-6xl mx-auto relative z-10">
@@ -556,7 +669,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 7: CTA */}
+      {/* SECTION 8: CTA */}
       <section className="py-32 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-bgPrimary z-0" />
         <div className="absolute inset-0 z-0 opacity-100">
