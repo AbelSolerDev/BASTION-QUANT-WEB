@@ -410,46 +410,81 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* SECTION 6: COMPARISON */}
-      <section className="py-24 px-4 bg-bgSecondary">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-display font-bold text-center mb-4">
-            Por que BASTION QUANT no compite en la liga retail.
-          </h2>
-          <p className="text-center text-textSecondary mb-12 max-w-3xl mx-auto">
-            Esta comparativa no habla de precio. Habla de estandares de seguridad, control operativo y trazabilidad.
-          </p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th className="py-4 px-4 text-textSecondary font-normal">Capacidad</th>
-                  <th className="py-4 px-4 text-center text-textSecondary font-normal">Bots Retail</th>
-                  <th className="py-4 px-4 text-center text-accentCyan font-bold">BASTION QUANT</th>
-                </tr>
-              </thead>
-              <tbody>
-                {retailComparison.map((row, idx) => (
-                  <tr key={idx} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white font-medium">{row.feature}</td>
-                    <td className="py-4 px-4 text-center">
-                      {row.retail ? <Check className="inline text-green-500" size={18} /> : <X className="inline text-red-500" size={18} />}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {row.bastion ? (
-                        <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-accentCyan/20 text-accentCyan">
-                          <Check size={14} />
-                        </div>
-                      ) : (
-                        <X size={18} />
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <section className="py-28 px-4 bg-[#0b1222] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_10%,rgba(239,68,68,0.12),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(6,182,212,0.14),transparent_45%)]" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5 text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-4">
+              Operational Benchmark
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Por que BASTION QUANT no compite en la liga retail.
+            </h2>
+            <p className="text-textSecondary max-w-3xl mx-auto">
+              Esta comparativa no habla de precio. Habla de estandares de seguridad, control operativo y trazabilidad.
+            </p>
           </div>
-          <div className="mt-8 text-center bg-accentCyan/5 p-6 rounded-xl border border-accentCyan/10">
-            <p className="text-lg text-accentCyan font-display font-bold">
+
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Riesgo</p>
+              <p className="text-white font-semibold">Proteccion por capas antes de ejecutar</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Ejecucion</p>
+              <p className="text-white font-semibold">Disciplina operativa con reglas verificables</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p className="text-[11px] font-mono text-textSecondary uppercase tracking-wider mb-1">Auditoria</p>
+              <p className="text-white font-semibold">Trazabilidad para decisiones de alto impacto</p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-black/25 backdrop-blur-md overflow-hidden">
+            <div className="hidden md:grid grid-cols-[1.4fr_0.8fr_0.8fr] border-b border-white/10 bg-white/5">
+              <div className="px-6 py-4 text-textSecondary font-mono text-xs uppercase tracking-wider">Capacidad</div>
+              <div className="px-6 py-4 text-center text-textSecondary font-mono text-xs uppercase tracking-wider">Retail</div>
+              <div className="px-6 py-4 text-center text-accentCyan font-mono text-xs uppercase tracking-wider">BASTION QUANT</div>
+            </div>
+
+            <div className="divide-y divide-white/10">
+              {retailComparison.map((row, idx) => (
+                <div
+                  key={idx}
+                  className="grid md:grid-cols-[1.4fr_0.8fr_0.8fr] gap-3 md:gap-0 px-4 md:px-6 py-4 hover:bg-white/5 transition-colors"
+                >
+                  <div className="text-white font-medium md:pr-6">{row.feature}</div>
+                  <div className="flex items-center md:justify-center">
+                    <span className="md:hidden text-[10px] font-mono text-textSecondary uppercase mr-2">Retail</span>
+                    {row.retail ? (
+                      <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentSuccess/10 text-accentSuccess border border-accentSuccess/20 text-xs font-mono">
+                        <Check size={12} /> Si
+                      </div>
+                    ) : (
+                      <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentDanger/10 text-accentDanger border border-accentDanger/20 text-xs font-mono">
+                        <X size={12} /> No
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex items-center md:justify-center">
+                    <span className="md:hidden text-[10px] font-mono text-textSecondary uppercase mr-2">BASTION</span>
+                    {row.bastion ? (
+                      <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentCyan/10 text-accentCyan border border-accentCyan/20 text-xs font-mono">
+                        <Check size={12} /> Si
+                      </div>
+                    ) : (
+                      <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-accentDanger/10 text-accentDanger border border-accentDanger/20 text-xs font-mono">
+                        <X size={12} /> No
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-xl border border-accentCyan/20 bg-accentCyan/8 px-5 py-4 text-center">
+            <p className="text-base md:text-lg text-accentCyan font-display font-bold">
               BASTION QUANT se posiciona como infraestructura privada, no como suscripcion masiva.
             </p>
           </div>
