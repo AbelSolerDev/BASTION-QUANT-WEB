@@ -2,10 +2,35 @@ import React, { useMemo, useState } from 'react';
 import { MessageSquare, X, Send, KeyRound, Trash2 } from 'lucide-react';
 
 type ChatRole = 'user' | 'assistant';
+type ApiRole = 'system' | 'user' | 'assistant';
 
 interface ChatMessage {
   role: ChatRole;
   content: string;
+}
+
+interface ApiMessage {
+  role: ApiRole;
+  content: string;
+}
+
+interface OpenRouterChoice {
+  message?: {
+    content?: string;
+  };
+  finish_reason?: string | null;
+}
+
+interface OpenRouterResponse {
+  choices?: OpenRouterChoice[];
+  error?: {
+    message?: string;
+  };
+}
+
+interface ModelCallResult {
+  content: string;
+  finishReason: string;
 }
 
 const STORAGE_KEY = 'bastion_openrouter_api_key';
@@ -16,6 +41,8 @@ const OPENROUTER_MODELS = [
   'qwen/qwen-2.5-72b-instruct:free',
   'mistralai/mistral-7b-instruct:free',
 ];
+const CONTINUE_PROMPT =
+  'Continua exactamente donde lo dejaste. No repitas. Mantiene el mismo formato y cierra la respuesta por completo.';
 
 const BASTION_CONTEXT = `
 BASTION Public Context:
@@ -33,9 +60,66 @@ BASTION Public Context:
 
 Style Guide:
 - Responde en espanol claro y profesional.
+- Usa markdown simple y limpio (negritas y listas cuando aporte claridad).
 - No inventes funciones no descritas; si falta informacion, dilo.
 - Priorizacion: seguridad, governance y claridad operativa.
 `;
+
+const renderInlineMarkdown = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      return (
+        <strong key={`bold-${index}`} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <React.Fragment key={`txt-${index}`}>{part}</React.Fragment>;
+  });
+};
+
+const renderMessageContent = (content: string): React.ReactNode[] => {
+  const blocks: React.ReactNode[] = [];
+  const lines = content.split('\n');
+  const bullets: string[] = [];
+
+  const flushBullets = (seed: number) => {
+    if (!bullets.length) return;
+    blocks.push(
+      <ul key={`ul-${seed}`} className="list-disc pl-5 space-y-1">
+        {bullets.map((item, idx) => (
+          <li key={`li-${seed}-${idx}`}>{renderInlineMarkdown(item)}</li>
+        ))}
+      </ul>
+    );
+    bullets.length = 0;
+  };
+
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      flushBullets(idx);
+      blocks.push(<div key={`spacer-${idx}`} className="h-2" />);
+      return;
+    }
+
+    if (trimmed.startsWith('- ')) {
+      bullets.push(trimmed.slice(2));
+      return;
+    }
+
+    flushBullets(idx);
+    blocks.push(
+      <p key={`p-${idx}`} className="leading-relaxed">
+        {renderInlineMarkdown(trimmed)}
+      </p>
+    );
+  });
+
+  flushBullets(lines.length + 1);
+  return blocks;
+};
 
 const BastionChatbot: React.FC = () => {
   const initialKey = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) ?? '' : '';
@@ -75,6 +159,42 @@ const BastionChatbot: React.FC = () => {
     localStorage.removeItem(STORAGE_KEY);
   };
 
+  const callModel = async (model: string, messages: ApiMessage[]): Promise<ModelCallResult> => {
+    const response = await fetch(OPENROUTER_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'HTTP-Referer': window.location.origin,
+        'X-Title': 'BASTION QUANT Web',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model,
+        messages,
+        temperature: 0.25,
+        max_tokens: 900,
+      }),
+    });
+
+    let data: OpenRouterResponse = {};
+    try {
+      data = (await response.json()) as OpenRouterResponse;
+    } catch {
+      data = {};
+    }
+
+    if (!response.ok) {
+      const apiError = data?.error?.message || `Error ${response.status}`;
+      throw new Error(apiError);
+    }
+
+    const choice = data?.choices?.[0];
+    return {
+      content: choice?.message?.content?.trim() ?? '',
+      finishReason: (choice?.finish_reason ?? 'stop').toString(),
+    };
+  };
+
   const sendMessage = async () => {
     const prompt = input.trim();
     if (!prompt || loading) return;
@@ -97,7 +217,7 @@ const BastionChatbot: React.FC = () => {
     setLoading(true);
 
     try {
-      const requestMessages = [
+      const requestMessages: ApiMessage[] = [
         { role: 'system', content: BASTION_CONTEXT },
         ...nextMessages.slice(-12).map((m) => ({
           role: m.role,
@@ -109,32 +229,35 @@ const BastionChatbot: React.FC = () => {
       let lastError = 'No hay respuesta del proveedor.';
 
       for (const model of OPENROUTER_MODELS) {
-        const response = await fetch(OPENROUTER_URL, {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-            'HTTP-Referer': window.location.origin,
-            'X-Title': 'BASTION QUANT Web',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            model,
-            messages: requestMessages,
-            temperature: 0.3,
-            max_tokens: 400,
-          }),
-        });
+        try {
+          let chainMessages = [...requestMessages];
+          let assembled = '';
 
-        const data = await response.json();
+          for (let pass = 0; pass < 3; pass++) {
+            const result = await callModel(model, chainMessages);
+            if (!result.content) break;
 
-        if (!response.ok) {
-          const apiError = data?.error?.message || `Error ${response.status}`;
+            assembled = assembled ? `${assembled}\n${result.content}` : result.content;
+
+            if (result.finishReason === 'length' || result.finishReason === 'max_tokens') {
+              chainMessages = [
+                ...chainMessages,
+                { role: 'assistant', content: assembled },
+                { role: 'user', content: CONTINUE_PROMPT },
+              ];
+              continue;
+            }
+            break;
+          }
+
+          if (assembled) {
+            content = assembled;
+            break;
+          }
+        } catch (error) {
+          const apiError = error instanceof Error ? error.message : 'Error desconocido';
           lastError = `${model}: ${apiError}`;
-          continue;
         }
-
-        content = data?.choices?.[0]?.message?.content?.trim() ?? '';
-        if (content) break;
       }
 
       if (!content) {
@@ -234,7 +357,7 @@ const BastionChatbot: React.FC = () => {
                       : 'bg-white/5 border border-white/10 text-textPrimary'
                   }`}
                 >
-                  {m.content}
+                  {renderMessageContent(m.content)}
                 </div>
               </div>
             ))}
