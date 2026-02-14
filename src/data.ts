@@ -14,6 +14,7 @@ export const blocks: Block[] = [
   { id: 'N', title: 'OPERACIONES', description: 'Incidentes, contabilidad y reconciliacion', phase: 'Fases 4.3-4.5' },
   { id: 'O', title: 'PRODUCCION', description: 'Paper, canary y salida controlada', phase: 'Fases 5.0-6.0' },
   { id: 'SENTINEL', title: 'SENTINEL', description: 'Programa separado de inteligencia macro', phase: 'Post-6.0' },
+  { id: 'FORGE', title: 'FORGE', description: 'Programa separado de investigacion de estrategias', phase: 'Post-6.0' },
 ];
 
 export const features: Feature[] = [
@@ -76,7 +77,11 @@ export const features: Feature[] = [
 
   { id: 120, block: 'SENTINEL', name: 'Programa Overwatch Macro', description: 'Linea de I+D separada del core operativo.', longDescription: 'Iniciativa posterior al core OMS/EMS para ampliar capa de riesgo macro.', status: 'FUTURO', icon: 'Eye' },
   { id: 121, block: 'SENTINEL', name: 'Radar de riesgo sistémico', description: 'Lectura de mercado en tiempo real.', longDescription: 'Integra multiples señales para anticipar cambios bruscos de entorno.', status: 'FUTURO', icon: 'Radar' },
-  { id: 122, block: 'SENTINEL', name: 'Simbiosis QUANT + SENTINEL', description: 'Decision combinada micro y macro.', longDescription: 'Coordina control tactico del core con una lectura macro de riesgo.', status: 'FUTURO', icon: 'MessageSquare' }
+  { id: 122, block: 'SENTINEL', name: 'Simbiosis QUANT + SENTINEL', description: 'Decision combinada micro y macro.', longDescription: 'Coordina control tactico del core con una lectura macro de riesgo.', status: 'FUTURO', icon: 'MessageSquare' },
+
+  { id: 130, block: 'FORGE', name: 'Prospector de hipotesis', description: 'Descubrimiento sistematico de alpha.', longDescription: 'Genera y prioriza candidatas de estrategia para acelerar investigacion cuantitativa.', status: 'FUTURO', icon: 'Search' },
+  { id: 131, block: 'FORGE', name: 'Crucible de validacion', description: 'Filtro riguroso multi-capa.', longDescription: 'Evalua robustez con validacion avanzada antes de recomendar cualquier despliegue.', status: 'FUTURO', icon: 'FlaskConical' },
+  { id: 132, block: 'FORGE', name: 'Champion / Challenger lifecycle', description: 'Evolucion continua de estrategias.', longDescription: 'Gestiona promocion, degradacion y retiro de estrategias con criterios objetivos.', status: 'FUTURO', icon: 'GitBranch' }
 ];
 
 export const retailComparison = [
