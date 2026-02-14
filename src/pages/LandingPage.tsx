@@ -30,7 +30,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* MESH GRADIENT */}
-        <div className="absolute inset-0 mesh-gradient opacity-20 md:opacity-30 z-0 mix-blend-screen" />
+        <div className="absolute inset-0 mesh-gradient opacity-15 md:opacity-30 z-0 mix-blend-screen" />
 
         {/* VINETTE OVERLAY */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-bgPrimary/80 via-transparent to-bgPrimary" />
@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl md:text-7xl font-display font-bold leading-tight"
           >
-            Tu propio <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-white to-violet-200 drop-shadow-[0_0_12px_rgba(125,211,252,0.6)] md:from-accentCyan md:via-white md:to-accentViolet md:animate-gradient-x">hedge fund</span><br />
+            Tu propio <span className="text-cyan-200 drop-shadow-[0_0_16px_rgba(34,211,238,0.65)] md:text-transparent md:bg-clip-text md:bg-gradient-to-r md:from-accentCyan md:via-white md:to-accentViolet md:animate-gradient-x md:drop-shadow-none">hedge fund</span><br />
             en un solo sistema.
           </motion.h1>
 
