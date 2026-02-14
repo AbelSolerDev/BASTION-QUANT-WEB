@@ -43,6 +43,8 @@ const OPENROUTER_MODELS = [
 ];
 const CONTINUE_PROMPT =
   'Continua exactamente donde lo dejaste. No repitas. Mantiene el mismo formato y cierra la respuesta por completo.';
+const DETAIL_INTENT_REGEX = /(detalle|detallado|profundiza|expand|extens|paso a paso|completo)/i;
+const MAX_CHARS_COMPACT = 1400;
 
 const BASTION_CONTEXT = `
 BASTION Public Context:
@@ -61,6 +63,9 @@ BASTION Public Context:
 Style Guide:
 - Responde en espanol claro y profesional.
 - Usa markdown simple y limpio (negritas y listas cuando aporte claridad).
+- Respuesta por defecto concisa: 90-160 palabras.
+- Evita tablas markdown con "|"; usa listas o bloques cortos.
+- Si el usuario no pide detalle explicito, no excedas 8 lineas.
 - No inventes funciones no descritas; si falta informacion, dilo.
 - Priorizacion: seguridad, governance y claridad operativa.
 `;
@@ -121,6 +126,20 @@ const renderMessageContent = (content: string): React.ReactNode[] => {
   return blocks;
 };
 
+const compactAssistantContent = (content: string, wantsDetail: boolean): string => {
+  let next = content
+    .replace(/\r/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/^\|.+\|$/gm, '')
+    .trim();
+
+  if (!wantsDetail && next.length > MAX_CHARS_COMPACT) {
+    next = `${next.slice(0, MAX_CHARS_COMPACT).replace(/\s+\S*$/, '')}\n\n[Respuesta resumida para mantener legibilidad. Pide "mas detalle" si quieres ampliar.]`;
+  }
+
+  return next;
+};
+
 const BastionChatbot: React.FC = () => {
   const initialKey = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) ?? '' : '';
   const [isOpen, setIsOpen] = useState(false);
@@ -159,7 +178,7 @@ const BastionChatbot: React.FC = () => {
     localStorage.removeItem(STORAGE_KEY);
   };
 
-  const callModel = async (model: string, messages: ApiMessage[]): Promise<ModelCallResult> => {
+  const callModel = async (model: string, messages: ApiMessage[], wantsDetail: boolean): Promise<ModelCallResult> => {
     const response = await fetch(OPENROUTER_URL, {
       method: 'POST',
       headers: {
@@ -172,7 +191,7 @@ const BastionChatbot: React.FC = () => {
         model,
         messages,
         temperature: 0.25,
-        max_tokens: 900,
+        max_tokens: wantsDetail ? 900 : 420,
       }),
     });
 
@@ -198,6 +217,7 @@ const BastionChatbot: React.FC = () => {
   const sendMessage = async () => {
     const prompt = input.trim();
     if (!prompt || loading) return;
+    const wantsDetail = DETAIL_INTENT_REGEX.test(prompt);
 
     if (!hasKey) {
       setMessages((prev) => [
@@ -233,13 +253,13 @@ const BastionChatbot: React.FC = () => {
           let chainMessages = [...requestMessages];
           let assembled = '';
 
-          for (let pass = 0; pass < 3; pass++) {
-            const result = await callModel(model, chainMessages);
+          for (let pass = 0; pass < 2; pass++) {
+            const result = await callModel(model, chainMessages, wantsDetail);
             if (!result.content) break;
 
             assembled = assembled ? `${assembled}\n${result.content}` : result.content;
 
-            if (result.finishReason === 'length' || result.finishReason === 'max_tokens') {
+            if (wantsDetail && (result.finishReason === 'length' || result.finishReason === 'max_tokens')) {
               chainMessages = [
                 ...chainMessages,
                 { role: 'assistant', content: assembled },
@@ -266,7 +286,7 @@ const BastionChatbot: React.FC = () => {
 
       const assistantMsg: ChatMessage = {
         role: 'assistant',
-        content,
+        content: compactAssistantContent(content, wantsDetail),
       };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (error) {
@@ -357,7 +377,7 @@ const BastionChatbot: React.FC = () => {
                       : 'bg-white/5 border border-white/10 text-textPrimary'
                   }`}
                 >
-                  {renderMessageContent(m.content)}
+                  <div className="break-words">{renderMessageContent(m.content)}</div>
                 </div>
               </div>
             ))}
