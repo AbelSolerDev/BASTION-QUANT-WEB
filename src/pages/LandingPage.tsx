@@ -12,6 +12,9 @@ import {
   Cpu,
   Network,
   Zap,
+  Gauge,
+  Fingerprint,
+  BarChart3,
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import Badge from '../components/ui/Badge';
@@ -21,6 +24,68 @@ import MatrixBackground from '../components/MatrixBackground';
 import { Link } from 'react-router-dom';
 import { retailComparison, features } from '../data';
 import * as Icons from 'lucide-react';
+
+const HeroQuantArtifact: React.FC = () => {
+  const rails = [
+    { label: 'Disciplina de ejecución', value: 'ALTA', widthPct: '86%', tone: 'bg-accentCyan' },
+    { label: 'Control de riesgo', value: 'ACTIVO', widthPct: '92%', tone: 'bg-accentSuccess' },
+    { label: 'Trazabilidad operativa', value: 'TOTAL', widthPct: '88%', tone: 'bg-accentViolet' },
+  ];
+
+  return (
+    <motion.aside
+      initial={{ opacity: 0, y: 20, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.35 }}
+      className="relative rounded-3xl border border-white/15 bg-[#070e1a]/80 backdrop-blur-xl p-5 md:p-6 overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_15%,rgba(6,182,212,0.22),transparent_40%),radial-gradient(circle_at_80%_90%,rgba(139,92,246,0.18),transparent_45%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(160deg,rgba(255,255,255,0.05)_0%,transparent_30%,transparent_100%)]" />
+
+      <div className="relative z-10">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-accentCyan/30 bg-accentCyan/10 text-accentCyan text-[11px] font-mono uppercase tracking-wider mb-4">
+          <Gauge size={12} />
+          QUANT Core Signal
+        </div>
+
+        <h3 className="text-white font-bold text-lg mb-2">Panel de decisión operativa</h3>
+        <p className="text-sm text-textSecondary mb-5">
+          QUANT mantiene una sola disciplina: decidir y ejecutar bajo reglas verificables, incluso en condiciones de estrés.
+        </p>
+
+        <div className="space-y-3">
+          {rails.map((rail) => (
+            <div key={rail.label} className="rounded-lg border border-white/10 bg-black/30 p-3">
+              <div className="flex items-center justify-between text-[11px] font-mono mb-2">
+                <span className="text-textSecondary uppercase tracking-wider">{rail.label}</span>
+                <span className="text-white font-bold">{rail.value}</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: rail.widthPct }}
+                  transition={{ duration: 0.9, delay: 0.4 }}
+                  className={`h-full rounded-full ${rail.tone}`}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+            <p className="text-[10px] font-mono text-textSecondary uppercase mb-1">Riesgo</p>
+            <p className="text-white text-sm font-bold">Fail-Closed</p>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+            <p className="text-[10px] font-mono text-textSecondary uppercase mb-1">Integridad</p>
+            <p className="text-white text-sm font-bold">Auditable</p>
+          </div>
+        </div>
+      </div>
+    </motion.aside>
+  );
+};
 
 const LandingPage: React.FC = () => {
   const [featureTab, setFeatureTab] = useState('Todos');
@@ -32,106 +97,132 @@ const LandingPage: React.FC = () => {
   return (
     <div className="bg-bgPrimary overflow-hidden relative">
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-4 pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-bgPrimary z-0" />
 
         <div className="absolute inset-0 z-0">
           <MatrixBackground />
         </div>
 
-        <div className="absolute inset-0 mesh-gradient opacity-15 md:opacity-30 z-0 mix-blend-screen" />
+        <div className="absolute inset-0 mesh-gradient opacity-10 md:opacity-20 z-0 mix-blend-screen" />
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-bgPrimary/80 via-transparent to-bgPrimary" />
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0a0e1a_90%)]" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_25%_40%,rgba(6,182,212,0.10),transparent_35%),radial-gradient(circle_at_75%_60%,rgba(139,92,246,0.10),transparent_35%),radial-gradient(circle_at_center,_transparent_0%,_#0a0e1a_88%)]" />
 
-        <div className="z-10 max-w-4xl mx-auto space-y-8 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center space-x-2 text-accentCyan font-mono text-sm tracking-widest uppercase mb-6"
-          >
-            <ShieldCheck size={16} className="animate-pulse" />
-            <span className="border border-accentCyan/30 px-3 py-1 rounded bg-accentCyan/5 backdrop-blur-sm">
-              BASTION QUANT · Sistema operativo de trading
-            </span>
-          </motion.div>
+        <div className="z-10 max-w-7xl mx-auto relative">
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 text-accentCyan font-mono text-[11px] md:text-xs tracking-widest uppercase mb-6 border border-accentCyan/30 px-3 py-1.5 rounded bg-accentCyan/5 backdrop-blur-sm"
+              >
+                <ShieldCheck size={14} className="animate-pulse" />
+                QUANT · Sistema operativo de trading cuantitativo
+              </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-display font-bold leading-tight"
-          >
-            BASTION{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">
-              QUANT
-            </span>
-            <br />
-            Tu sistema de trading con disciplina profesional.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto"
-          >
-            Diseñado para invertir con método, no por impulso. QUANT analiza, decide y ejecuta bajo reglas de riesgo,
-            con control y trazabilidad en cada operación.
-            <br />
-            <strong className="text-white">Más control. Menos ruido. Decisiones con criterio.</strong>
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4 pt-4"
-          >
-            <Link to="/catalog" className="w-full md:w-auto">
-              <button className="group relative w-full md:w-auto rounded-full p-[1px] bg-gradient-to-r from-accentCyan via-white/70 to-accentViolet hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all">
-                <span className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0b1222]/95 text-white font-bold tracking-[0.02em] group-hover:bg-[#0f1830]/95 transition-colors">
-                  Ver cómo funciona QUANT
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-5xl md:text-7xl font-display font-bold leading-[0.95] mb-5"
+              >
+                BASTION{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">
+                  QUANT
                 </span>
-              </button>
-            </Link>
-            <Link to="/sentinel" className="w-full md:w-auto">
-              <button className="group w-full md:w-auto px-8 py-4 border border-accentDanger/40 text-accentDanger font-bold rounded-full hover:bg-accentDanger/10 hover:border-accentDanger transition-all flex items-center justify-center backdrop-blur-md">
-                <span className="inline-flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accentDanger group-hover:animate-pulse" />
-                  Descubrir SENTINEL
-                </span>
-              </button>
-            </Link>
-            <Link to="/forge" className="w-full md:w-auto">
-              <button className="w-full md:w-auto px-8 py-4 border border-accentOrange/35 text-accentOrange font-bold rounded-full hover:bg-accentOrange/10 hover:border-accentOrange transition-all flex items-center justify-center backdrop-blur-md">
-                Descubrir FORGE
-              </button>
-            </Link>
-          </motion.div>
+                <br />
+                <span className="text-white">Invierte con método. Ejecuta con disciplina.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                QUANT transforma decisiones de trading en un proceso verificable: reglas claras, riesgo controlado y
+                trazabilidad completa de cada operación.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+                className="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accentSuccess/30 bg-accentSuccess/10 text-accentSuccess text-xs font-mono">
+                  <ShieldCheck size={12} />
+                  Riesgo por capas
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accentCyan/30 bg-accentCyan/10 text-accentCyan text-xs font-mono">
+                  <Fingerprint size={12} />
+                  Trazabilidad total
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accentViolet/30 bg-accentViolet/10 text-accentViolet text-xs font-mono">
+                  <BarChart3 size={12} />
+                  Disciplina cuantitativa
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="mt-8"
+              >
+                <Link to="/catalog" className="inline-block w-full md:w-auto">
+                  <button className="group relative w-full md:w-auto rounded-full p-[1px] bg-gradient-to-r from-accentCyan via-white/70 to-accentViolet hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all">
+                    <span className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0b1222]/95 text-white font-bold tracking-[0.02em] group-hover:bg-[#0f1830]/95 transition-colors">
+                      Ver capacidades QUANT
+                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
+                </Link>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 justify-center lg:justify-start">
+                  <Link
+                    to="/sentinel"
+                    className="text-sm font-mono text-accentDanger/90 hover:text-accentDanger transition-colors inline-flex items-center gap-1"
+                  >
+                    Ver SENTINEL <ArrowRight size={13} />
+                  </Link>
+                  <Link
+                    to="/forge"
+                    className="text-sm font-mono text-accentOrange/90 hover:text-accentOrange transition-colors inline-flex items-center gap-1"
+                  >
+                    Ver FORGE <ArrowRight size={13} />
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <HeroQuantArtifact />
+            </div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10 mt-12 bg-black/20 backdrop-blur-sm rounded-xl p-4"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.75 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 border border-white/10 bg-black/30 backdrop-blur-sm rounded-2xl p-4"
           >
-            <div>
-              <div className="text-3xl font-mono font-bold text-white">75%</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Roadmap QUANT Completado</div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="text-2xl font-mono font-bold text-white">75%</div>
+              <div className="text-[10px] text-textSecondary uppercase tracking-widest">Roadmap QUANT completado</div>
             </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-white">488</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Pruebas Superadas</div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="text-2xl font-mono font-bold text-white">488</div>
+              <div className="text-[10px] text-textSecondary uppercase tracking-widest">Pruebas superadas</div>
             </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-white">38</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Tablas Auditables</div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="text-2xl font-mono font-bold text-white">38</div>
+              <div className="text-[10px] text-textSecondary uppercase tracking-widest">Tablas auditables</div>
             </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-accentSuccess">78 -&gt; 90</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Score Institucional</div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="text-2xl font-mono font-bold text-accentSuccess">78 → 90</div>
+              <div className="text-[10px] text-textSecondary uppercase tracking-widest">Score institucional</div>
             </div>
           </motion.div>
         </div>
