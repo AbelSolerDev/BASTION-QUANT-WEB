@@ -600,23 +600,24 @@ const LandingPage: React.FC = () => {
               MANDO Y CONTROL
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Opera con un centro de mando institucional.
+              Controla QUANT desde tu app Android privada.
             </h2>
             <p className="text-textSecondary mb-6">
-              Comandos críticos, confirmaciones reforzadas y trazabilidad para decisiones de alta sensibilidad.
+              Sin intermediarios de mensajería. Canal directo y cifrado con tu backend para supervisar estado y actuar
+              en escenarios críticos.
             </p>
             <div className="space-y-4 font-mono text-sm">
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
-                <span className="text-accentCyan">/estado</span>
-                <span className="text-textSecondary">Resumen ejecutivo y PnL diario.</span>
+                <span className="text-accentCyan">Dashboard móvil</span>
+                <span className="text-textSecondary">Estado del sistema, equity, PnL diario y posiciones abiertas.</span>
               </div>
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
-                <span className="text-accentDanger">/kill</span>
-                <span className="text-textSecondary">Botón de pánico (requiere 2FA).</span>
+                <span className="text-accentDanger">Comandos críticos</span>
+                <span className="text-textSecondary">PAUSE · KILL · REANUDAR con PIN y confirmación reforzada.</span>
               </div>
               <div className="p-3 bg-white/5 rounded border border-white/5 flex gap-3 items-center">
-                <span className="text-accentGold">/pausa</span>
-                <span className="text-textSecondary">Detiene nuevas entradas, gestiona salidas.</span>
+                <span className="text-accentGold">Alertas push</span>
+                <span className="text-textSecondary">Notificaciones críticas en tiempo real incluso con la app cerrada.</span>
               </div>
             </div>
           </div>

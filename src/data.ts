@@ -63,7 +63,7 @@ export const features: Feature[] = [
   { id: 85, block: 'K-L', name: 'Post-only y reduce-only robusto', description: 'Control fino de impacto y cierre.', longDescription: 'Evita ejecución no deseada y preserva coherencia de salida.', status: 'CONSTRUIDO', icon: 'CornerDownLeft' },
 
   { id: 90, block: 'M', name: 'Motor de alertas con dedupe', description: 'Señal útil sin tormenta de ruido.', longDescription: 'Agrupa y prioriza eventos para respuesta humana efectiva.', status: 'ROADMAP', icon: 'Bell' },
-  { id: 91, block: 'M', name: 'Centro de mando Telegram', description: 'Comandos críticos con control reforzado.', longDescription: 'Canal operativo móvil con validaciones y trazabilidad.', status: 'ROADMAP', icon: 'Smartphone' },
+  { id: 91, block: 'M', name: 'App Android privada de mando', description: 'Gobierno remoto seguro sin intermediarios.', longDescription: 'Aplicación móvil nativa privada para estado, alertas y comandos críticos con validaciones de seguridad y trazabilidad.', status: 'ROADMAP', icon: 'Smartphone' },
   { id: 92, block: 'M', name: 'Autenticación empresarial', description: '2FA, RBAC y sesión robusta.', longDescription: 'Eleva gobernanza de acceso para operaciones críticas.', status: 'ROADMAP', icon: 'ShieldHalf' },
   { id: 93, block: 'M', name: 'Cockpit operativo', description: 'Semáforos y control centralizado.', longDescription: 'Vista unificada de estado, alertas y decisiones de alto impacto.', status: 'ROADMAP', icon: 'LayoutDashboard' },
 

@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 
 const Terminal: React.FC = () => {
   const [lines, setLines] = useState<string[]>([
-    "BASTION QUANT v3.3 initialized...",
-    "Connecting to secure gateway...",
-    "Authenticating... OK",
+    "BASTION QUANT mobile channel initialized...",
+    "Establishing direct HTTPS link...",
+    "Device authentication... OK",
   ]);
 
   useEffect(() => {
     const sequence = [
       { text: "Mode: LIVE | Kill: ARMED", delay: 1000 },
-      { text: "Equity: $142,503.21 (+4.2%)", delay: 2000 },
-      { text: "Active Strategies: 4", delay: 2500 },
-      { text: "SENTINEL: 92/100 (Safe)", delay: 3500 },
-      { text: "> Waiting for command...", delay: 4500 }
+      { text: "Device: Android private APK (whitelisted)", delay: 1800 },
+      { text: "Push channel: ACTIVE | Critical alerts ON", delay: 2600 },
+      { text: "PIN challenge: READY (TTL 120s)", delay: 3400 },
+      { text: "> Waiting for remote command...", delay: 4400 }
     ];
 
     let timeouts: ReturnType<typeof setTimeout>[] = [];
@@ -35,7 +35,7 @@ const Terminal: React.FC = () => {
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
-        <span className="ml-2 text-gray-500 text-xs">bastion_cli — ssh</span>
+        <span className="ml-2 text-gray-500 text-xs">bastion_mobile — secure channel</span>
       </div>
       <div className="p-4 h-64 overflow-y-auto text-green-500">
         {lines.map((line, i) => (
