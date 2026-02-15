@@ -38,6 +38,12 @@ const CatalogPage: React.FC = () => {
           </span>
         </p>
 
+        <div className="mb-10 rounded-xl border border-accentSuccess/25 bg-accentSuccess/10 px-4 py-3">
+          <p className="text-xs md:text-sm font-mono text-accentSuccess">
+            ESTADO OPERATIVO: Fase 3.9 cerrada · Bloque L completado · Próximo bloque M (fase 4.0)
+          </p>
+        </div>
+
         <div className="space-y-12">
           {featuresByBlock.map((group) => (
             <div key={group.id} className="relative">

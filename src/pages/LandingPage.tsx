@@ -80,7 +80,7 @@ const LandingPage: React.FC = () => {
             className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto"
           >
             Plataforma cuantitativa con validación estadística, control operativo por capas y trazabilidad completa de
-            decisiones. Fase 3.4 en ejecución con ruta definida hasta 6.0.
+            decisiones. Fase 3.9 cerrada, bloque EMS avanzado completado y transición activa hacia fase 4.0.
             <br />
             <strong className="text-white">No es un bot. Es infraestructura financiera.</strong>
           </motion.p>
@@ -121,15 +121,15 @@ const LandingPage: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10 mt-12 bg-black/20 backdrop-blur-sm rounded-xl p-4"
           >
             <div>
-              <div className="text-3xl font-mono font-bold text-white">27/43</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Fases Completadas</div>
+              <div className="text-3xl font-mono font-bold text-white">9/12</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Bloques QUANT Completados</div>
             </div>
             <div>
-              <div className="text-3xl font-mono font-bold text-white">237</div>
+              <div className="text-3xl font-mono font-bold text-white">488</div>
               <div className="text-xs text-textSecondary uppercase tracking-widest">Tests Validados</div>
             </div>
             <div>
-              <div className="text-3xl font-mono font-bold text-white">33</div>
+              <div className="text-3xl font-mono font-bold text-white">38</div>
               <div className="text-xs text-textSecondary uppercase tracking-widest">Tablas Auditables</div>
             </div>
             <div>
@@ -241,11 +241,11 @@ const LandingPage: React.FC = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
                 <span className="text-accentCyan">{features.length}</span> Capacidades documentadas.{' '}
-                <span className="text-accentSuccess">27/43</span> fases completadas.
+                <span className="text-accentSuccess">9/12</span> bloques QUANT completados.
               </h2>
               <p className="text-textSecondary max-w-xl">
-                El programa avanza en Safety y Observabilidad (3.4-3.5), seguido de ejecución táctica (3.6-3.9), mando y
-                control (4.x), operaciones (4.3-4.5) y salida a producción (5.0-6.0).
+                Safety y Observabilidad (3.4-3.5) y EMS táctico (3.6-3.9) ya están cerrados. El foco actual es Mando y
+                Control (4.0-4.2), seguido de Operaciones (4.3-4.5) y salida a producción (5.0-6.0).
               </p>
             </div>
             <Link
@@ -257,7 +257,7 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="w-full bg-bgSecondary h-4 rounded-full mb-12 overflow-hidden relative">
-            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-accentCyan to-accentViolet w-[63%]" />
+            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-accentCyan to-accentViolet w-[75%]" />
             <div className="absolute top-0 left-0 h-full w-full hidden md:flex text-[10px] font-mono font-bold text-white/50 items-center justify-between px-4">
               <span>Base</span>
               <span>Safety</span>
@@ -266,7 +266,7 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <p className="md:hidden text-[11px] font-mono text-textSecondary text-center -mt-8 mb-8">
-            Estado actual: Safety 3.4 -&gt; Objetivo: Producción 6.0
+            Estado actual: 3.9 cerrada (bloque L) -&gt; Siguiente: 4.0
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
