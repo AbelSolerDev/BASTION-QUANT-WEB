@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import Badge from '../components/ui/Badge';
-import Terminal from '../components/Terminal';
+import MobileControlPreview from '../components/MobileControlPreview';
 import HolographicCore from '../components/HolographicCore';
 import MatrixBackground from '../components/MatrixBackground';
 import { Link } from 'react-router-dom';
@@ -593,7 +593,7 @@ const LandingPage: React.FC = () => {
       <section className="py-24 px-4 bg-bgPrimary">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 flex justify-center">
-            <Terminal />
+            <MobileControlPreview />
           </div>
           <div className="order-1 lg:order-2">
             <div className="inline-block px-3 py-1 rounded bg-accentViolet/10 text-accentViolet text-xs font-mono mb-4">
