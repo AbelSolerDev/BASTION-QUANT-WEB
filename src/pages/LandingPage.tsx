@@ -52,7 +52,7 @@ const LandingPage: React.FC = () => {
           >
             <ShieldCheck size={16} className="animate-pulse" />
             <span className="border border-accentCyan/30 px-3 py-1 rounded bg-accentCyan/5 backdrop-blur-sm">
-              Institutional-Grade Crypto Trading
+              BASTION QUANT · Sistema operativo de trading
             </span>
           </motion.div>
 
@@ -62,15 +62,12 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl md:text-7xl font-display font-bold leading-tight"
           >
-            Tu propio{' '}
-            <span className="md:hidden text-cyan-200 [text-shadow:0_0_16px_rgba(34,211,238,0.75)]">
-              hedge fund
-            </span>
-            <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">
-              hedge fund
+            BASTION{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-white to-accentViolet animate-gradient-x">
+              QUANT
             </span>
             <br />
-            en un solo sistema.
+            Tu sistema de trading con disciplina profesional.
           </motion.h1>
 
           <motion.p
@@ -79,10 +76,10 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Plataforma cuantitativa con validación estadística, control operativo por capas y trazabilidad completa de
-            decisiones. Fase 3.9 cerrada, bloque EMS avanzado completado y transición activa hacia fase 4.0.
+            Diseñado para invertir con método, no por impulso. QUANT analiza, decide y ejecuta bajo reglas de riesgo,
+            con control y trazabilidad en cada operación.
             <br />
-            <strong className="text-white">No es un bot. Es infraestructura financiera.</strong>
+            <strong className="text-white">Más control. Menos ruido. Decisiones con criterio.</strong>
           </motion.p>
 
           <motion.div
@@ -94,7 +91,7 @@ const LandingPage: React.FC = () => {
             <Link to="/catalog" className="w-full md:w-auto">
               <button className="group relative w-full md:w-auto rounded-full p-[1px] bg-gradient-to-r from-accentCyan via-white/70 to-accentViolet hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all">
                 <span className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0b1222]/95 text-white font-bold tracking-[0.02em] group-hover:bg-[#0f1830]/95 transition-colors">
-                  Explorar Infraestructura
+                  Ver cómo funciona QUANT
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
@@ -121,12 +118,12 @@ const LandingPage: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10 mt-12 bg-black/20 backdrop-blur-sm rounded-xl p-4"
           >
             <div>
-              <div className="text-3xl font-mono font-bold text-white">9/12</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Bloques QUANT Completados</div>
+              <div className="text-3xl font-mono font-bold text-white">75%</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Roadmap QUANT Completado</div>
             </div>
             <div>
               <div className="text-3xl font-mono font-bold text-white">488</div>
-              <div className="text-xs text-textSecondary uppercase tracking-widest">Tests Validados</div>
+              <div className="text-xs text-textSecondary uppercase tracking-widest">Pruebas Superadas</div>
             </div>
             <div>
               <div className="text-3xl font-mono font-bold text-white">38</div>
@@ -240,12 +237,12 @@ const LandingPage: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                <span className="text-accentCyan">{features.length}</span> Capacidades documentadas.{' '}
-                <span className="text-accentSuccess">9/12</span> bloques QUANT completados.
+                <span className="text-accentCyan">{features.length}</span> Capacidades de QUANT documentadas.{' '}
+                <span className="text-accentSuccess">75%</span> del roadmap principal completado.
               </h2>
               <p className="text-textSecondary max-w-xl">
-                Safety y Observabilidad (3.4-3.5) y EMS táctico (3.6-3.9) ya están cerrados. El foco actual es Mando y
-                Control (4.0-4.2), seguido de Operaciones (4.3-4.5) y salida a producción (5.0-6.0).
+                El núcleo de seguridad y ejecución avanzada ya está construido. El siguiente salto es reforzar mando y
+                control antes de operaciones finales y salida a producción.
               </p>
             </div>
             <Link
@@ -266,7 +263,7 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <p className="md:hidden text-[11px] font-mono text-textSecondary text-center -mt-8 mb-8">
-            Estado actual: 3.9 cerrada (bloque L) -&gt; Siguiente: 4.0
+            Estado actual: QUANT v3.9 estable -&gt; siguiente hito: 4.0
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
