@@ -107,19 +107,20 @@ const Navbar: React.FC = () => {
           >
             <div className="flex flex-col gap-8 h-full">
               <div className="flex flex-col gap-6">
-                <Link to="/" className="text-2xl font-display font-bold text-white border-b border-white/10 pb-4">
-                  01 // DASHBOARD
-                </Link>
-                <Link to="/catalog" className="text-2xl font-display font-bold text-white border-b border-white/10 pb-4">
-                  02 // CAPACIDADES QUANT
+                <Link to="/catalog" className="text-2xl font-display font-bold text-accentCyan border-b border-accentCyan/20 pb-4 flex items-center justify-between">
+                  <span>01 // CAPACIDADES QUANT</span>
+                  <span className="text-xs bg-accentCyan/20 px-2 py-1 rounded text-accentCyan font-mono">DOCS</span>
                 </Link>
                 <Link to="/sentinel" className="text-2xl font-display font-bold text-accentDanger border-b border-accentDanger/20 pb-4 flex items-center justify-between">
-                  <span>03 // SENTINEL</span>
+                  <span>02 // SENTINEL</span>
                   <span className="text-xs bg-accentDanger/20 px-2 py-1 rounded text-accentDanger font-mono">LIVE</span>
                 </Link>
                 <Link to="/forge" className="text-2xl font-display font-bold text-accentOrange border-b border-accentOrange/20 pb-4 flex items-center justify-between">
-                  <span>04 // FORGE</span>
+                  <span>03 // FORGE</span>
                   <span className="text-xs bg-accentOrange/20 px-2 py-1 rounded text-accentOrange font-mono">R&D</span>
+                </Link>
+                <Link to="/" className="text-2xl font-display font-bold text-white border-b border-white/10 pb-4">
+                  04 // INICIO
                 </Link>
               </div>
 
